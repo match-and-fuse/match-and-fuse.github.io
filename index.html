@@ -1,312 +1,1456 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Match-and-Fuse: Consistent Generation from Unstructured Image Sets">
+    <meta name="description"
+          content="We present a zero-short, training-free method for consistent controlled generation of unstructured image sets - collections that share a common visual element, yet differ in viewpoint, time of capture, and surrounding content. Unlike existing methods that operate on individual images or densely sampled videos, our framework performs set-to-set generation. Our key idea is to model the task as a graph, where each node corresponds to an image and each edge triggers a joint generation of image pairs. This formulation consolidates all pairwise generations into a unified framework, enforcing their local consistency while ensuring global coherence across the entire set. This is achieved by fusing internal features across image pairs, guided by dense input correspondences, without requiring masks or manual supervision. It also allows us to leverage an emergent prior in text‑to‑image models that encourages coherent generation when multiple views share a single canvas. Match-and-Fuse achieves state-of-the-art consistency and visual quality, and unlocks new capabilities for content creation from image collections.">
+    <meta name="keywords"
+          content="Diffusion, Controlled Image Generation, Image Sets, Consistency, Training-Free, Deep Learning, Computer Vision, AI">
+    <meta name="author" content="Kate Feingold, Omri Kaduri, Tali Dekel">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
 
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Weizmann Institute of Science">
+    <meta property="og:title" content="Match-and-Fuse: Consistent Generation from Unstructured Image Sets">
+    <meta property="og:description"
+          content="We present a zero-short, training-free method for consistent controlled generation of unstructured image sets - collections that share a common visual element, yet differ in viewpoint, time of capture, and surrounding content. Unlike existing methods that operate on individual images or densely sampled videos, our framework performs set-to-set generation. Our key idea is to model the task as a graph, where each node corresponds to an image and each edge triggers a joint generation of image pairs. This formulation consolidates all pairwise generations into a unified framework, enforcing their local consistency while ensuring global coherence across the entire set. This is achieved by fusing internal features across image pairs, guided by dense input correspondences, without requiring masks or manual supervision. It also allows us to leverage an emergent prior in text‑to‑image models that encourages coherent generation when multiple views share a single canvas. Match-and-Fuse achieves state-of-the-art consistency and visual quality, and unlocks new capabilities for content creation from image collections.">
+    <meta property="og:url" content="https://match-and-fuse.github.io/">
+    <meta property="og:image" content="https://match-and-fuse.github.io/static/images/teaser_banner.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="600">
+    <meta property="og:image:alt"
+          content="Match-and-Fuse: Consistent Generation from Unstructured Image Sets - Research Preview">
+    <!--    <meta property="article:published_time" content="2025-01-01T00:00:00.000Z">-->
+    <meta property="article:author" content="Kate Feingold, Omri Kaduri, Tali Dekel">
+    <meta property="article:section" content="Research">
+    <meta property="article:tag" content="Diffusion">
+    <meta property="article:tag" content="Controlled Image Generation">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Match-and-Fuse: Consistent Generation from Unstructured Image Sets">
+    <meta name="twitter:description"
+          content="We present a zero-short, training-free method for consistent controlled generation of unstructured image sets - collections that share a common visual element, yet differ in viewpoint, time of capture, and surrounding content. Unlike existing methods that operate on individual images or densely sampled videos, our framework performs set-to-set generation. Our key idea is to model the task as a graph, where each node corresponds to an image and each edge triggers a joint generation of image pairs. This formulation consolidates all pairwise generations into a unified framework, enforcing their local consistency while ensuring global coherence across the entire set. This is achieved by fusing internal features across image pairs, guided by dense input correspondences, without requiring masks or manual supervision. It also allows us to leverage an emergent prior in text‑to‑image models that encourages coherent generation when multiple views share a single canvas. Match-and-Fuse achieves state-of-the-art consistency and visual quality, and unlocks new capabilities for content creation from image collections.">
+    <meta name="twitter:image" content="https://match-and-fuse.github.io/static/images/teaser_banner.png">
+    <meta name="twitter:image:alt"
+          content="Match-and-Fuse: Consistent Generation from Unstructured Image Sets - Research Preview">
 
-  <title>Academic Project Page</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-  rel="stylesheet">
+    <!-- Academic/Research Specific -->
+    <meta name="citation_title" content="Match-and-Fuse: Consistent Generation from Unstructured Image Sets">
+    <meta name="citation_author" content="Feingold, Kate">
+    <meta name="citation_author" content="Kaduri, Omri">
+    <meta name="citation_author" content="Dekel, Tali">
+    <meta name="citation_publication_date" content="2025">
+    <!--    <meta name="citation_conference_title" content="CONFERENCE_NAME">-->
+    <!--    <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">-->
 
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
+    <title>Match-and-Fuse: Consistent Generation from Unstructured Image Sets</title>
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+    <link rel="apple-touch-icon" href="static/images/favicon.ico">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
-  <script src="static/js/index.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="static/js/custom.js"></script>
 </head>
 <body>
 
 
-  <section class="hero">
+<section class="hero">
     <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- Paper authors -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title">Match-and-Fuse: Consistent Generation from Unstructured
+                        Image Sets</h1>
+                    <div class="is-size-5 publication-authors">
+                        <!-- Paper authors -->
+                        <span class="author-block">
+                <a href="https://www.linkedin.com/in/kateyurkova/" target="_blank">Kate Feingold</a>,</span>
+                        <span class="author-block">
+                  <a href="https://omrikaduri.github.io/" target="_blank">Omri Kaduri</a>,</span>
+                        <span class="author-block">
+                    <a href="https://www.weizmann.ac.il/math/dekel/home" target="_blank">Tali Dekel</a>
                   </span>
-                  </div>
+                    </div>
 
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
+                    <div class="is-size-5 publication-authors">
+                        <!--                    <span class="author-block">Weizmann Institute of Science<br>CVPR 2026 (under review)</span>-->
+                        <span class="author-block">Weizmann Institute of Science</span>
+                    </div>
 
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- Arxiv PDF link -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
-                  <!-- Github link -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- ArXiv abstract Link -->
-                <span class="link-block">
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <!-- ArXiv abstract Link -->
+                            <span class="link-block">
                   <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
+                     class="external-link button is-normal is-rounded">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
                   </span>
                   <span>arXiv</span>
                 </a>
               </span>
+
+                            <!-- Github link -->
+                            <span class="link-block">
+                    <a href="https://github.com/kate-feingold/match-and-fuse" target="_blank"
+                       class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (Coming Soon)</span>
+                  </a>
+                </span>
+
+                            <!-- Supplementary HTML link -->
+                            <span class="link-block">
+                                <a href="supplementary.html" target="_blank"
+                                   class="external-link button is-normal is-rounded">
+                      <span class="icon">
+                        <i class="fas fa-database"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                             </span>
+
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 </section>
 
 
-<!-- Teaser video-->
 <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
+    <div class="container is-max-desktop">
+        <div class="hero-body">
+            <video poster="" id="tree" autoplay muted loop height="100%">
+                <!-- Your video here -->
+                <source src="static/videos/teaser_video.mp4"
+                        type="video/mp4">
+            </video>
+            <h2 class="subtitle has-text-centered">
+                Given a source set of images depicting shared objects in varied settings (e.g., pose,
+                environment, viewpoint), our method, <strong>Match-and-Fuse</strong>, jointly generates an output set in
+                which the consistency among the shared content is preserved. The output adheres to the
+                user-provided prompts that describe the target shared content \(\mathcal{P}^{shared}\) and the
+                scene's style/theme \(\mathcal{P}^{theme}\).
+            </h2>
+        </div>
     </div>
-  </div>
 </section>
 <!-- End teaser video -->
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
-          </p>
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Abstract</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        We present <strong>Match-and-Fuse</strong> &ndash; a zero-short, training-free method for
+                        consistent controlled generation of
+                        unstructured image sets &ndash; collections that share a common visual element, yet differ in
+                        viewpoint,
+                        time of capture, and surrounding content. Unlike existing methods that operate on individual
+                        images or
+                        densely sampled videos, our framework performs set-to-set generation: given a source set and
+                        user prompts,
+                        it produces a new set that preserves cross-image consistency of shared content. Our key idea is
+                        to model
+                        the task as a graph, where each node corresponds to an image and each edge triggers a joint
+                        generation of image pairs.
+                        This formulation consolidates all pairwise generations into a unified framework, enforcing their
+                        local consistency while ensuring global coherence across the entire set. This is achieved by
+                        fusing internal
+                        features across image pairs, guided by dense input correspondences, without requiring masks or
+                        manual supervision.
+                        It also allows us to leverage an emergent prior in text‑to‑image models that encourages
+                        coherent generation
+                        when multiple views share a single canvas. Match-and-Fuse achieves state-of-the-art consistency
+                        and visual quality,
+                        and unlocks new capabilities for content creation from image collections.
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </section>
 <!-- End paper abstract -->
 
+<!-- Paper Method -->
+<section class="section hero">
+    <div class="container is-max-desktop is-centered has-text-centered">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-full">
+                <h2 class="title is-3">Method</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        The input to our method is an <em>unstructured</em> set of \(N\) images along with user-provided
+                        prompts:
+                        \(\mathcal{P}^{shared}\) and \(\mathcal{P}^{theme}\), describing the target shared content
+                        and
+                        general style or theme, respectively. Our method outputs \(N\) images that preserve the source
+                        semantic layout
+                        while ensuring visual consistency across shared elements.
+                    </p>
 
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
+                    <p>
+                        We build on a pre-trained, frozen, depth-conditioned T2I model. Although designed for
+                        single-image
+                        generation, these models have been shown to produce image grids when prompted with joint layouts
+                        (e.g., <em>"Side-by-side views of..."</em>), establishing cross-image relationships as
+                        demonstrated in recent work <a href="#References">[1, 2]</a>.
+                        However, this emerged capability, which we refer to as the <em>grid prior</em>, exhibits several
+                        key
+                        limitations: (i) it provides only partial consistency in appearance, shape, and semantics;
+                        (ii) the consistency deteriorates rapidly as more images are composed;
+                        and (iii) generating a single canvas is bounded by the model’s native resolution, limiting
+                        scalability.
+                    </p>
+
+                    <p>
+                        Our method leverages the grid prior while overcoming its core limitations.
+                        Specifically, we model the image set as a <strong>Pairwise Consistency Graph</strong>,
+                        comprising of all possible two-image grid generations.
+                        This allows us to exploit the strong inductive bias of the grid prior, while eliminating its
+                        scale limitation.
+                        To enhance visual consistency both within each image grid and across grids, we perform joint
+                        feature manipulation across all pairwise generations.
+                        To this end, we utilize dense 2D correspondences from the source set to automatically identify
+                        shared regions &ndash;
+                        without requiring object masks &ndash; and enforce fine-grained alignment. We find that
+                        feature-space similarity
+                        along these matches correlates strongly with visual coherence, motivating the use of <strong>Multiview
+                        Feature Fusion</strong>.
+                        We further refine details via <strong>Feature Guidance</strong>, using a feature-matching
+                        objective.
+                    </p>
+
+                </div>
+
+                <!-- 🖼️ Add your image here -->
+                <figure class="image mt-5">
+                    <img src="static/images/method.png" alt="Overview of our method pipeline"/>
+                    <figcaption class="has-text-grey is-size-6 mt-2">
+                        <strong>Method pipeline.</strong> Example for 4 images. In pre-processing, pairwise matches are
+                        computed between all inputs, and
+                        per-image prompts are generated from the set-level prompts. At each denoising step, noisy image
+                        latents form a Pairwise Consistency Graph, whose edges \(z^{t}_{ij}\) are jointly denoised with
+                        Multiview Feature Fusion (MFF) and
+                        aggregated back into per-image latents \(z^{t-1}_i\) by averaging over adjacent edges. The
+                        latents
+                        are further refined with Feature Guidance via a feature-level matching objective.
+                    </figcaption>
+                </figure>
+
+                <figure class="image mt-5">
+                    <img src="static/images/MFF.png" alt="Overview of our method pipeline"/>
+                    <figcaption class="has-text-grey is-size-6 mt-2">
+                        <strong>MFF Denoising step.</strong> (a) Two-image grids on all edges
+                        are denoised with a frozen DiT. Selected blocks average K,V along adjacent edges into
+                        \(\bar{\mathbf{f}}_i\), which are then fused via source matches (b). Images are fused jointly,
+                        illustrated by arrows for \(i{=}1\).
+                    </figcaption>
+                </figure>
+
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-</div>
+</section>
+<!-- End Paper Method -->
+
+<!-- Image carousel results-->
+<section class="hero is-small is-light">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column">
+                    <h2 class="title is-3">Results</h2>
+
+                    <div class="content has-text-justified">
+                        <p>
+                            Match-and-Fuse generates consistent content of rigid and non-rigid shared elements, single
+                            and
+                            multi-subject,
+                            with shared or varying background, preserving fine-grained consistency in textures, small
+                            details, and typography.
+                            Notably, it can generate consistent long sequences.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container is-fluid">
+            <div id="results-carousel" class="carousel results-carousel">
+                <div class="item">
+                    <div class="image-block">
+
+                        <div class="row images-row">
+                            <div class="vertical-label">Source Set</div>
+                            <img src="supplementary/results/pet_cat1_winter/image_0.png" alt="image_0">
+                            <img src="supplementary/results/pet_cat1_winter/image_1.png" alt="image_1">
+                            <img src="supplementary/results/pet_cat1_winter/image_2.png" alt="image_2">
+                            <img src="supplementary/results/pet_cat1_winter/image_3.png" alt="image_3">
+                            <img src="supplementary/results/pet_cat1_winter/image_4.png" alt="image_4">
+                        </div>
+                        <div class="row images-row">
+                            <div class="vertical-label">Generations</div>
+                            <img src="supplementary/results/pet_cat1_winter/result_0.png" alt="result_0">
+                            <img src="supplementary/results/pet_cat1_winter/result_1.png" alt="result_1">
+                            <img src="supplementary/results/pet_cat1_winter/result_2.png" alt="result_2">
+                            <img src="supplementary/results/pet_cat1_winter/result_3.png" alt="result_3">
+                            <img src="supplementary/results/pet_cat1_winter/result_4.png" alt="result_4">
+                        </div>
+                        <div class="row prompt-row">
+                            <h2>
+                                \(\mathcal{P}^{shared}\): <i>"A cat-shaped balloon"</i>
+                                <span class="tab-spacer"></span>
+                                \(\mathcal{P}^{theme}\): <i>"winter"</i>
+                            </h2>
+                        </div>
+                        <div class="row images-row">
+                            <div class="vertical-label">Generations</div>
+                            <img src="supplementary/results/pet_cat1_autumn_p2/result_0.png" alt="result_0">
+                            <img src="supplementary/results/pet_cat1_autumn_p2/result_1.png" alt="result_1">
+                            <img src="supplementary/results/pet_cat1_autumn_p2/result_2.png" alt="result_2">
+                            <img src="supplementary/results/pet_cat1_autumn_p2/result_3.png" alt="result_3">
+                            <img src="supplementary/results/pet_cat1_autumn_p2/result_4.png" alt="result_4">
+                        </div>
+                        <div class="row prompt-row">
+                            <h2>
+                                \(\mathcal{P}^{shared}\): <i>"Extraterrestrial alien pet"</i>
+                                <span class="tab-spacer"></span>
+                                \(\mathcal{P}^{theme}\): <i>"autumn"</i>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="image-block">
+                        <div class="row images-row">
+                            <div class="vertical-label">Source Set</div>
+                            <img src="supplementary/results/dog8_autumn/image_0.png" alt="image_0">
+                            <img src="supplementary/results/dog8_autumn/image_1.png" alt="image_1">
+                            <img src="supplementary/results/dog8_autumn/image_2.png" alt="image_2">
+                            <img src="supplementary/results/dog8_autumn/image_3.png" alt="image_3">
+                            <img src="supplementary/results/dog8_autumn/image_4.png" alt="image_4">
+                        </div>
+                        <div class="row images-row">
+                            <div class="vertical-label">Generations</div>
+                            <img src="supplementary/results/dog8_autumn/result_0.png" alt="result_0">
+                            <img src="supplementary/results/dog8_autumn/result_1.png" alt="result_1">
+                            <img src="supplementary/results/dog8_autumn/result_2.png" alt="result_2">
+                            <img src="supplementary/results/dog8_autumn/result_3.png" alt="result_3">
+                            <img src="supplementary/results/dog8_autumn/result_4.png" alt="result_4">
+                        </div>
+                        <div class="row prompt-row">
+                            <h2>
+                                \(\mathcal{P}^{shared}\): <i>"Black-white knitted dog"</i>
+                                <span class="tab-spacer"></span>
+                                \(\mathcal{P}^{theme}\): <i>"autumn"</i>
+                            </h2>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="image-block">
+                        <div class="row images-row">
+                            <div class="vertical-label">Source Set</div>
+                            <img src="supplementary/results/can_dreamy-summer/image_0.png" alt="image_0">
+                            <img src="supplementary/results/can_dreamy-summer/image_1.png" alt="image_1">
+                            <img src="supplementary/results/can_dreamy-summer/image_2.png" alt="image_2">
+                            <img src="supplementary/results/can_dreamy-summer/image_3.png" alt="image_3">
+                            <img src="supplementary/results/can_dreamy-summer/image_4.png" alt="image_4">
+                            <img src="supplementary/results/can_dreamy-summer/image_5.png" alt="image_5">
+                        </div>
+                        <div class="row images-row">
+                            <div class="vertical-label">Generations</div>
+                            <img src="supplementary/results/can_dreamy-summer/result_0.png" alt="result_0">
+                            <img src="supplementary/results/can_dreamy-summer/result_1.png" alt="result_1">
+                            <img src="supplementary/results/can_dreamy-summer/result_2.png" alt="result_2">
+                            <img src="supplementary/results/can_dreamy-summer/result_3.png" alt="result_3">
+                            <img src="supplementary/results/can_dreamy-summer/result_4.png" alt="result_4">
+                            <img src="supplementary/results/can_dreamy-summer/result_5.png" alt="result_5">
+                        </div>
+                        <div class="row prompt-row">
+                            <h2>
+                                \(\mathcal{P}^{shared}\): <i>"A 'Summer Potion' can"</i>
+                                <span class="tab-spacer"></span>
+                                \(\mathcal{P}^{theme}\): <i>"dreamy summer"</i>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="image-block">
+                        <div class="row images-row">
+                            <div class="vertical-label">Source Set</div>
+                            <img src="supplementary/results/person_3_crop_claymotion/image_0.png" alt="image_0">
+                            <img src="supplementary/results/person_3_crop_claymotion/image_1.png" alt="image_1">
+                            <img src="supplementary/results/person_3_crop_claymotion/image_2.png" alt="image_2">
+                            <img src="supplementary/results/person_3_crop_claymotion/image_3.png" alt="image_3">
+                            <img src="supplementary/results/person_3_crop_claymotion/image_4.png" alt="image_4">
+                            <img src="supplementary/results/person_3_crop_claymotion/image_5.png" alt="image_5">
+                            <img src="supplementary/results/person_3_crop_claymotion/image_6.png" alt="image_6">
+                            <img src="supplementary/results/person_3_crop_claymotion/image_7.png" alt="image_7">
+                            <img src="supplementary/results/person_3_crop_claymotion/image_8.png" alt="image_8">
+                            <img src="supplementary/results/person_3_crop_claymotion/image_9.png" alt="image_9">
+                            <img src="supplementary/results/person_3_crop_claymotion/image_10.png" alt="image_10">
+                            <img src="supplementary/results/person_3_crop_claymotion/image_11.png" alt="image_11">
+                            <img src="supplementary/results/person_3_crop_claymotion/image_12.png" alt="image_12">
+                            <img src="supplementary/results/person_3_crop_claymotion/image_13.png" alt="image_13">
+                            <img src="supplementary/results/person_3_crop_claymotion/image_14.png" alt="image_14">
+                        </div>
+                        <div class="row images-row">
+                            <div class="vertical-label">Generations</div>
+                            <img src="supplementary/results/person_3_crop_claymotion/result_0.png" alt="result_0">
+                            <img src="supplementary/results/person_3_crop_claymotion/result_1.png" alt="result_1">
+                            <img src="supplementary/results/person_3_crop_claymotion/result_2.png" alt="result_2">
+                            <img src="supplementary/results/person_3_crop_claymotion/result_3.png" alt="result_3">
+                            <img src="supplementary/results/person_3_crop_claymotion/result_4.png" alt="result_4">
+                            <img src="supplementary/results/person_3_crop_claymotion/result_5.png" alt="result_5">
+                            <img src="supplementary/results/person_3_crop_claymotion/result_6.png" alt="result_6">
+                            <img src="supplementary/results/person_3_crop_claymotion/result_7.png" alt="result_7">
+                            <img src="supplementary/results/person_3_crop_claymotion/result_8.png" alt="result_8">
+                            <img src="supplementary/results/person_3_crop_claymotion/result_9.png" alt="result_9">
+                            <img src="supplementary/results/person_3_crop_claymotion/result_10.png" alt="result_10">
+                            <img src="supplementary/results/person_3_crop_claymotion/result_11.png" alt="result_11">
+                            <img src="supplementary/results/person_3_crop_claymotion/result_12.png" alt="result_12">
+                            <img src="supplementary/results/person_3_crop_claymotion/result_13.png" alt="result_13">
+                            <img src="supplementary/results/person_3_crop_claymotion/result_14.png" alt="result_14">
+                        </div>
+                        <div class="row prompt-row">
+                            <h2>
+                                \(\mathcal{P}^{shared}\): <i>"Claymation character in glasses"</i>
+                                <span class="tab-spacer"></span>
+                                \(\mathcal{P}^{theme}\): <i>"claymation"</i>
+                            </h2>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="image-block">
+                        <div class="row images-row">
+                            <div class="vertical-label">Source Set</div>
+                            <img src="supplementary/results/flower_2/image_0.png" alt="image_0">
+                            <img src="supplementary/results/flower_2/image_1.png" alt="image_1">
+                            <img src="supplementary/results/flower_2/image_2.png" alt="image_2">
+                            <img src="supplementary/results/flower_2/image_3.png" alt="image_3">
+                            <img src="supplementary/results/flower_2/image_4.png" alt="image_4">
+                            <img src="supplementary/results/flower_2/image_5.png" alt="image_5">
+                            <img src="supplementary/results/flower_2/image_6.png" alt="image_6">
+                        </div>
+                        <div class="row images-row">
+                            <div class="vertical-label">Generations</div>
+                            <img src="supplementary/results/flower_2/result_0.png" alt="result_0">
+                            <img src="supplementary/results/flower_2/result_1.png" alt="result_1">
+                            <img src="supplementary/results/flower_2/result_2.png" alt="result_2">
+                            <img src="supplementary/results/flower_2/result_3.png" alt="result_3">
+                            <img src="supplementary/results/flower_2/result_4.png" alt="result_4">
+                            <img src="supplementary/results/flower_2/result_5.png" alt="result_5">
+                            <img src="supplementary/results/flower_2/result_6.png" alt="result_6">
+                        </div>
+                        <div class="row prompt-row">
+                            <h2>
+                                \(\mathcal{P}^{shared}\): <i>"An exotic flower"</i>
+                                <span class="tab-spacer"></span>
+                                \(\mathcal{P}^{theme}\): <i>"jungle"</i>
+                            </h2>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="image-block">
+                        <div class="row images-row">
+                            <div class="vertical-label">Source Set</div>
+                            <img src="supplementary/results/bear_plushie_gothic-horror/image_0.png" alt="image_0">
+                            <img src="supplementary/results/bear_plushie_gothic-horror/image_1.png" alt="image_1">
+                            <img src="supplementary/results/bear_plushie_gothic-horror/image_2.png" alt="image_2">
+                            <img src="supplementary/results/bear_plushie_gothic-horror/image_3.png" alt="image_3">
+                            <img src="supplementary/results/bear_plushie_gothic-horror/image_4.png" alt="image_4">
+                        </div>
+                        <div class="row images-row">
+                            <div class="vertical-label">Generations</div>
+                            <img src="supplementary/results/bear_plushie_jelly/result_0.png" alt="result_0">
+                            <img src="supplementary/results/bear_plushie_jelly/result_1.png" alt="result_1">
+                            <img src="supplementary/results/bear_plushie_jelly/result_2.png" alt="result_2">
+                            <img src="supplementary/results/bear_plushie_jelly/result_3.png" alt="result_3">
+                            <img src="supplementary/results/bear_plushie_jelly/result_4.png" alt="result_3">
+                        </div>
+                        <div class="row prompt-row">
+                            <h2>
+                                \(\mathcal{P}^{shared}\): <i>"Gummy bear with 'Cheer Up' text"</i>
+                                <span class="tab-spacer"></span>
+                                \(\mathcal{P}^{theme}\): <i>"jelly world"</i>
+                            </h2>
+                        </div>
+                        <div class="row images-row">
+                            <div class="vertical-label">Generations</div>
+                            <img src="supplementary/results/bear_plushie_gothic-horror/result_0.png" alt="result_0">
+                            <img src="supplementary/results/bear_plushie_gothic-horror/result_1.png" alt="result_1">
+                            <img src="supplementary/results/bear_plushie_gothic-horror/result_2.png" alt="result_2">
+                            <img src="supplementary/results/bear_plushie_gothic-horror/result_3.png" alt="result_3">
+                            <img src="supplementary/results/bear_plushie_gothic-horror/result_4.png" alt="result_4">
+                        </div>
+                        <div class="row prompt-row">
+                            <h2>
+                                \(\mathcal{P}^{shared}\): <i>"Horror teddy bear with 'Eternal Rest' text"</i>
+                                <span class="tab-spacer"></span>
+                                \(\mathcal{P}^{theme}\): <i>"gothic horror"</i>
+                            </h2>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="image-block">
+                        <div class="row images-row">
+                            <div class="vertical-label">Source Set</div>
+                            <img src="supplementary/results/dog_winter/image_0.png" alt="image_0">
+                            <img src="supplementary/results/dog_winter/image_1.png" alt="image_1">
+                            <img src="supplementary/results/dog_winter/image_2.png" alt="image_2">
+                            <img src="supplementary/results/dog_winter/image_3.png" alt="image_3">
+                            <img src="supplementary/results/dog_winter/image_4.png" alt="image_4">
+                        </div>
+                        <div class="row images-row">
+                            <div class="vertical-label">Generations</div>
+                            <img src="supplementary/results/dog_winter/result_0.png" alt="result_0">
+                            <img src="supplementary/results/dog_winter/result_1.png" alt="result_1">
+                            <img src="supplementary/results/dog_winter/result_2.png" alt="result_2">
+                            <img src="supplementary/results/dog_winter/result_3.png" alt="result_3">
+                            <img src="supplementary/results/dog_winter/result_4.png" alt="result_4">
+                        </div>
+                        <div class="row prompt-row">
+                            <h2>
+                                \(\mathcal{P}^{shared}\): <i>"Two-colored metal statue"</i>
+                                <span class="tab-spacer"></span>
+                                \(\mathcal{P}^{theme}\): <i>"winter"</i>
+                            </h2>
+                        </div>
+                        <div class="row images-row">
+                            <div class="vertical-label">Generations</div>
+                            <img src="supplementary/results/dog_night/result_0.png" alt="result_0">
+                            <img src="supplementary/results/dog_night/result_1.png" alt="result_1">
+                            <img src="supplementary/results/dog_night/result_2.png" alt="result_2">
+                            <img src="supplementary/results/dog_night/result_3.png" alt="result_3">
+                            <img src="supplementary/results/dog_night/result_4.png" alt="result_4">
+                        </div>
+                        <div class="row prompt-row">
+                            <h2>
+                                \(\mathcal{P}^{shared}\): <i>"Horror-style animal"</i>
+                                <span class="tab-spacer"></span>
+                                \(\mathcal{P}^{theme}\): <i>"night"</i>
+                            </h2>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="view-all-wrapper">
+                <a href="supplementary.html#results" class="view-all-link" target="_blank" rel="noopener noreferrer">
+                    View all →
+                </a>
+            </div>
+        </div>
+    </div>
 </section>
 <!-- End image carousel -->
 
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
-
-
-<!-- Video carousel -->
+<!-- Image carousel storyboards -->
 <section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-full">
+                    <h2 class="title is-3">Sketch to Storyboard</h2>
+
+                    <div class="content">
+                        <p>
+                            Match-and-Fuse generalizes to sketched inputs, enabling controlled storyboard generation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="storyboard-carousel" class="carousel results-carousel">
+
+                <div class="item">
+                    <div class="image-block">
+                        <div class="row images-row-by-width">
+                            <div class="vertical-label">Source Set</div>
+                            <img src="supplementary/storyboards/dress/image_0.png" alt="image_0">
+                            <img src="supplementary/storyboards/dress/image_1.png" alt="image_1">
+                            <img src="supplementary/storyboards/dress/image_2.png" alt="image_2">
+                            <img src="supplementary/storyboards/dress/image_3.png" alt="image_3">
+                            <img src="supplementary/storyboards/dress/image_4.png" alt="image_4">
+                            <img src="supplementary/storyboards/dress/image_5.png" alt="image_5">
+                        </div>
+                        <div class="row images-row-by-width">
+                            <div class="vertical-label">Generations</div>
+                            <img src="supplementary/storyboards/dress/result_0.png" alt="result_0">
+                            <img src="supplementary/storyboards/dress/result_1.png" alt="result_1">
+                            <img src="supplementary/storyboards/dress/result_2.png" alt="result_2">
+                            <img src="supplementary/storyboards/dress/result_3.png" alt="result_3">
+                            <img src="supplementary/storyboards/dress/result_4.png" alt="result_4">
+                            <img src="supplementary/storyboards/dress/result_5.png" alt="result_5">
+                        </div>
+                        <div class="row prompt-row">
+                            <h2>
+                                \(\mathcal{P}^{shared}\): <i>"Striped dress"</i>
+                                <span class="tab-spacer"></span>
+                                \(\mathcal{P}^{theme}\): <i>"simple"</i>
+                            </h2>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="image-block">
+                        <div class="row images-row-by-width">
+                            <div class="vertical-label">Source Set</div>
+                            <img src="supplementary/storyboards/octopus/image_0.png" alt="image_0">
+                            <img src="supplementary/storyboards/octopus/image_1.png" alt="image_1">
+                            <img src="supplementary/storyboards/octopus/image_2.png" alt="image_2">
+                            <img src="supplementary/storyboards/octopus/image_3.png" alt="image_3">
+                            <img src="supplementary/storyboards/octopus/image_4.png" alt="image_4">
+                            <img src="supplementary/storyboards/octopus/image_5.png" alt="image_5">
+                        </div>
+                        <div class="row images-row-by-width">
+                            <div class="vertical-label">Generations</div>
+                            <img src="supplementary/storyboards/octopus/result_0.png" alt="result_0">
+                            <img src="supplementary/storyboards/octopus/result_1.png" alt="result_1">
+                            <img src="supplementary/storyboards/octopus/result_2.png" alt="result_2">
+                            <img src="supplementary/storyboards/octopus/result_3.png" alt="result_3">
+                            <img src="supplementary/storyboards/octopus/result_4.png" alt="result_4">
+                            <img src="supplementary/storyboards/octopus/result_5.png" alt="result_5">
+                        </div>
+                        <div class="row prompt-row">
+                            <h2>
+                                \(\mathcal{P}^{shared}\): <i>"A pink octopus with yellow spots"</i>
+                                <span class="tab-spacer"></span>
+                                \(\mathcal{P}^{theme}\): <i>"underwater"</i>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="image-block">
+
+                        <div class="row images-row">
+                            <div class="vertical-label">Source Set</div>
+                            <img src="supplementary/storyboards/guy/image_0.png" alt="image_0">
+                            <img src="supplementary/storyboards/guy/image_1.png" alt="image_1">
+                            <img src="supplementary/storyboards/guy/image_2.png" alt="image_2">
+                            <img src="supplementary/storyboards/guy/image_3.png" alt="image_3">
+                            <img src="supplementary/storyboards/guy/image_4.png" alt="image_4">
+                            <img src="supplementary/storyboards/guy/image_5.png" alt="image_5">
+                        </div>
+
+
+                        <div class="row images-row">
+                            <div class="vertical-label">Generations</div>
+                            <img src="supplementary/storyboards/guy/result_0.png" alt="result_0">
+                            <img src="supplementary/storyboards/guy/result_1.png" alt="result_1">
+                            <img src="supplementary/storyboards/guy/result_2.png" alt="result_2">
+                            <img src="supplementary/storyboards/guy/result_3.png" alt="result_3">
+                            <img src="supplementary/storyboards/guy/result_4.png" alt="result_4">
+                            <img src="supplementary/storyboards/guy/result_5.png" alt="result_5">
+                        </div>
+
+
+                        <div class="row prompt-row">
+                            <h2>
+                                \(\mathcal{P}^{shared}\): <i>"A young man"</i>
+                                <span class="tab-spacer"></span>
+                                \(\mathcal{P}^{theme}\): <i>"simple life"</i>
+                            </h2>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="image-block">
+
+                        <div class="row images-row-by-width">
+                            <div class="vertical-label">Source Set</div>
+                            <img src="supplementary/storyboards/shoes6/image_0.png" alt="image_0">
+                            <img src="supplementary/storyboards/shoes6/image_1.png" alt="image_1">
+                            <img src="supplementary/storyboards/shoes6/image_2.png" alt="image_2">
+                            <img src="supplementary/storyboards/shoes6/image_3.png" alt="image_3">
+                            <img src="supplementary/storyboards/shoes6/image_4.png" alt="image_4">
+                            <img src="supplementary/storyboards/shoes6/image_5.png" alt="image_5">
+                        </div>
+
+
+                        <div class="row images-row-by-width">
+                            <div class="vertical-label">Generations</div>
+                            <img src="supplementary/storyboards/shoes6/result_0.png" alt="result_0">
+                            <img src="supplementary/storyboards/shoes6/result_1.png" alt="result_1">
+                            <img src="supplementary/storyboards/shoes6/result_2.png" alt="result_2">
+                            <img src="supplementary/storyboards/shoes6/result_3.png" alt="result_3">
+                            <img src="supplementary/storyboards/shoes6/result_4.png" alt="result_4">
+                            <img src="supplementary/storyboards/shoes6/result_5.png" alt="result_5">
+                        </div>
+
+
+                        <div class="row prompt-row">
+                            <h2>
+                                \(\mathcal{P}^{shared}\): <i>"Vibrant sneakers"</i>
+                                <span class="tab-spacer"></span>
+                                \(\mathcal{P}^{theme}\): <i>"gloomy day"</i>
+                            </h2>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="view-all-wrapper">
+                <a href="supplementary.html#storyboards" class="view-all-link" target="_blank"
+                   rel="noopener noreferrer">
+                    View all →
+                </a>
+            </div>
         </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
     </div>
-  </div>
 </section>
-<!-- End video carousel -->
+<!-- End image carousel -->
 
-
-
-
-
-
-<!-- Paper poster -->
+<!-- Image carousel localized -->
 <section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-full">
+                    <h2 class="title is-3">Localized Editing</h2>
 
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
+                    <div class="content">
+                        <p>
+                            Match-and-Fused enables consistent, localized editing without \(\mathcal{P}^{theme}\),
+                            achieved
+                            through integration with FlowEdit <a href="#References">[3]</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="localized-carousel" class="carousel results-carousel">
+                <div class="item">
+                    <div class="image-block">
+
+                        <div class="row images-row">
+                            <div class="vertical-label">Source Set</div>
+                            <img src="supplementary/localized/plushie_2_Hawaii/image_0.png" alt="image_0">
+                            <img src="supplementary/localized/plushie_2_Hawaii/image_1.png" alt="image_1">
+                            <img src="supplementary/localized/plushie_2_Hawaii/image_2.png" alt="image_2">
+                            <img src="supplementary/localized/plushie_2_Hawaii/image_3.png" alt="image_3">
+                        </div>
+
+
+                        <div class="row images-row">
+                            <div class="vertical-label">Generations</div>
+                            <img src="supplementary/localized/plushie_2_Hawaii/result_0.png" alt="result_0">
+                            <img src="supplementary/localized/plushie_2_Hawaii/result_1.png" alt="result_1">
+                            <img src="supplementary/localized/plushie_2_Hawaii/result_2.png" alt="result_2">
+                            <img src="supplementary/localized/plushie_2_Hawaii/result_3.png" alt="result_3">
+                        </div>
+
+
+                        <div class="row prompt-row">
+                            <h2>
+                                \(\mathcal{P}^{shared}\): <i>"Plush Stitch"</i>
+                            </h2>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="image-block">
+
+                        <div class="row images-row">
+                            <div class="vertical-label">Source Set</div>
+                            <img src="supplementary/localized/things_book2_inter-galactic/image_0.png" alt="image_0">
+                            <img src="supplementary/localized/things_book2_inter-galactic/image_1.png" alt="image_1">
+                            <img src="supplementary/localized/things_book2_inter-galactic/image_2.png" alt="image_2">
+                            <img src="supplementary/localized/things_book2_inter-galactic/image_3.png" alt="image_3">
+                            <img src="supplementary/localized/things_book2_inter-galactic/image_4.png" alt="image_4">
+                            <img src="supplementary/localized/things_book2_inter-galactic/image_5.png" alt="image_5">
+                        </div>
+
+
+                        <div class="row images-row">
+                            <div class="vertical-label">Generations</div>
+                            <img src="supplementary/localized/things_book2_inter-galactic/result_0.png" alt="result_0">
+                            <img src="supplementary/localized/things_book2_inter-galactic/result_1.png" alt="result_1">
+                            <img src="supplementary/localized/things_book2_inter-galactic/result_2.png" alt="result_2">
+                            <img src="supplementary/localized/things_book2_inter-galactic/result_3.png" alt="result_3">
+                            <img src="supplementary/localized/things_book2_inter-galactic/result_4.png" alt="result_4">
+                            <img src="supplementary/localized/things_book2_inter-galactic/result_5.png" alt="result_5">
+                        </div>
+
+
+                        <div class="row prompt-row">
+                            <h2>
+                                \(\mathcal{P}^{shared}\): <i>"A book titled 'Timetravel Manual'"</i>
+                            </h2>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="image-block">
+                        <div class="row images-row">
+                            <div class="vertical-label">Source Set</div>
+                            <img src="supplementary/localized/pet_dog1/image_0.png" alt="image_0">
+                            <img src="supplementary/localized/pet_dog1/image_1.png" alt="image_1">
+                            <img src="supplementary/localized/pet_dog1/image_2.png" alt="image_2">
+                            <img src="supplementary/localized/pet_dog1/image_3.png" alt="image_3">
+                            <!--                            <img src="supplementary/localized/pet_dog1/image_4.png" alt="image_4">-->
+                            <img src="supplementary/localized/pet_dog1/image_5.png" alt="image_5">
+                            <img src="supplementary/localized/pet_dog1/image_6.png" alt="image_6">
+                            <img src="supplementary/localized/pet_dog1/image_7.png" alt="image_7">
+                        </div>
+                        <div class="row images-row">
+                            <div class="vertical-label">Generations</div>
+                            <img src="supplementary/localized/pet_dog1/result_0.png" alt="result_0">
+                            <img src="supplementary/localized/pet_dog1/result_1.png" alt="result_1">
+                            <img src="supplementary/localized/pet_dog1/result_2.png" alt="result_2">
+                            <img src="supplementary/localized/pet_dog1/result_3.png" alt="result_3">
+                            <!--                            <img src="supplementary/localized/pet_dog1/result_4.png" alt="result_4">-->
+                            <img src="supplementary/localized/pet_dog1/result_5.png" alt="result_5">
+                            <img src="supplementary/localized/pet_dog1/result_6.png" alt="result_6">
+                            <img src="supplementary/localized/pet_dog1/result_7.png" alt="result_7">
+                        </div>
+                        <div class="row prompt-row">
+                            <h2>
+                                \(\mathcal{P}^{shared}\): <i>"A sheep in a red t-shirt"</i>
+                            </h2>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="image-block">
+                        <div class="row images-row">
+                            <div class="vertical-label">Source Set</div>
+                            <img src="supplementary/localized/transport_car10/image_0.png" alt="image_0">
+                            <img src="supplementary/localized/transport_car10/image_1.png" alt="image_1">
+                            <img src="supplementary/localized/transport_car10/image_2.png" alt="image_2">
+                            <img src="supplementary/localized/transport_car10/image_3.png" alt="image_3">
+                        </div>
+                        <div class="row images-row">
+                            <div class="vertical-label">Generations</div>
+                            <img src="supplementary/localized/transport_car10/result_0.png" alt="result_0">
+                            <img src="supplementary/localized/transport_car10/result_1.png" alt="result_1">
+                            <img src="supplementary/localized/transport_car10/result_2.png" alt="result_2">
+                            <img src="supplementary/localized/transport_car10/result_3.png" alt="result_3">
+                        </div>
+                        <div class="row prompt-row">
+                            <h2>
+                                \(\mathcal{P}^{shared}\): <i>"A hippy car"</i>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="view-all-wrapper">
+                <a href="supplementary.html#localized" class="view-all-link" target="_blank" rel="noopener noreferrer">
+                    View all →
+                </a>
+            </div>
+        </div>
     </div>
-  </section>
-<!--End paper poster -->
+</section>
+<!-- End image carousel -->
 
+<!-- Image carousel comparisons-->
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column">
+                    <h2 class="title is-3">Comparisons</h2>
+
+                    <div class="toggle-bar" role="group" aria-label="Row visibility">
+                        <p>
+                            <strong>Use toggle</strong> to compare to baselines.
+                        </p>
+                        <div class="toggle-group">
+
+                            <label class="switch" title="Show/Hide FLUX.1-dev">
+                                <input type="checkbox" data-row="flux" aria-controls="row-flux"/>
+                                <span class="track"><span class="knob"></span></span>
+                                <span class="label">FLUX.1-dev</span>
+                            </label>
+
+                            <label class="switch" title="Show/Hide FLUX.1 Kontext">
+                                <input type="checkbox" data-row="kontext" aria-controls="row-kontext"/>
+                                <span class="track"><span class="knob"></span></span>
+                                <span class="label">FLUX.1 Kontext</span>
+                            </label>
+
+                            <label class="switch" title="Show/Hide IC-LoRA">
+                                <input type="checkbox" data-row="iclora" aria-controls="row-iclora"/>
+                                <span class="track"><span class="knob"></span></span>
+                                <span class="label">IC-LoRA</span>
+                            </label>
+
+                            <label class="switch" title="Show/Hide Edicho-Inpaint*">
+                                <input type="checkbox" data-row="edicho_inpaint"
+                                       aria-controls="row-edicho_inpaint"/>
+                                <span class="track"><span class="knob"></span></span>
+                                <span class="label">Edicho-Inpaint*</span>
+                            </label>
+
+                            <label class="switch" title="Show/Hide Edicho">
+                                <input type="checkbox" data-row="edicho" aria-controls="row-edicho"/>
+                                <span class="track"><span class="knob"></span></span>
+                                <span class="label">Edicho</span>
+                            </label>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div id="comparisons-carousel" class="carousel results-carousel">
+                <div class="item">
+                    <div class="image-block">
+
+                        <div class="row images-row" data-row="src">
+                            <div class="vertical-label">Source Set</div>
+                            <img src="supplementary/comparisons/dance_front/src/image_0.png" alt="image_0">
+                            <img src="supplementary/comparisons/dance_front/src/image_1.png" alt="image_1">
+                            <img src="supplementary/comparisons/dance_front/src/image_2.png" alt="image_2">
+                            <img src="supplementary/comparisons/dance_front/src/image_3.png" alt="image_3">
+                            <img src="supplementary/comparisons/dance_front/src/image_4.png" alt="image_4">
+                        </div>
+
+                        <div class="row prompt-row">
+                            <h2>
+                                \(\mathcal{P}^{shared}\): <i>"Pixar characters"</i>
+                                <span class="tab-spacer"></span>
+                                \(\mathcal{P}^{theme}\): <i>"plain background"</i>
+                            </h2>
+                        </div>
+
+                        <div class="row images-row" data-row="flux">
+                            <div class="vertical-label">FLUX.1-dev</div>
+                            <img src="supplementary/comparisons/dance_front/flux/result_0.png" alt="result_0">
+                            <img src="supplementary/comparisons/dance_front/flux/result_1.png" alt="result_1">
+                            <img src="supplementary/comparisons/dance_front/flux/result_2.png" alt="result_2">
+                            <img src="supplementary/comparisons/dance_front/flux/result_3.png" alt="result_3">
+                            <img src="supplementary/comparisons/dance_front/flux/result_4.png" alt="result_4">
+                        </div>
+
+                        <div class="row images-row" data-row="kontext">
+                            <div class="vertical-label">FLUX.1 Kontext</div>
+                            <img src="supplementary/comparisons/dance_front/kontext/result_0.png" alt="result_0">
+                            <img src="supplementary/comparisons/dance_front/kontext/result_1.png" alt="result_1">
+                            <img src="supplementary/comparisons/dance_front/kontext/result_2.png" alt="result_2">
+                            <img src="supplementary/comparisons/dance_front/kontext/result_3.png" alt="result_3">
+                            <img src="supplementary/comparisons/dance_front/kontext/result_4.png" alt="result_4">
+                        </div>
+
+                        <div class="row images-row" data-row="iclora">
+                            <div class="vertical-label">IC-LoRA</div>
+                            <img src="supplementary/comparisons/dance_front/iclora/result_0.png" alt="result_0">
+                            <img src="supplementary/comparisons/dance_front/iclora/result_1.png" alt="result_1">
+                            <img src="supplementary/comparisons/dance_front/iclora/result_2.png" alt="result_2">
+                            <img src="supplementary/comparisons/dance_front/iclora/result_3.png" alt="result_3">
+                            <img src="supplementary/comparisons/dance_front/iclora/result_4.png" alt="result_4">
+                        </div>
+
+                        <div class="row images-row" data-row="edicho_inpaint">
+                            <div class="vertical-label">Edicho-Inpaint*</div>
+                            <img src="supplementary/comparisons/dance_front/edicho_inpaint/result_0.png" alt="result_0">
+                            <img src="supplementary/comparisons/dance_front/edicho_inpaint/result_1.png" alt="result_1">
+                            <img src="supplementary/comparisons/dance_front/edicho_inpaint/result_2.png" alt="result_2">
+                            <img src="supplementary/comparisons/dance_front/edicho_inpaint/result_3.png" alt="result_3">
+                            <img src="supplementary/comparisons/dance_front/edicho_inpaint/result_4.png" alt="result_4">
+                        </div>
+
+                        <div class="row images-row" data-row="ours">
+                            <div class="vertical-label">Ours</div>
+                            <img src="supplementary/comparisons/dance_front/ours/result_0.png" alt="result_0">
+                            <img src="supplementary/comparisons/dance_front/ours/result_1.png" alt="result_1">
+                            <img src="supplementary/comparisons/dance_front/ours/result_2.png" alt="result_2">
+                            <img src="supplementary/comparisons/dance_front/ours/result_3.png" alt="result_3">
+                            <img src="supplementary/comparisons/dance_front/ours/result_4.png" alt="result_4">
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="image-block">
+
+                        <div class="row images-row">
+                            <div class="vertical-label">Source Set</div>
+                            <img src="supplementary/comparisons/wearable_shoes1_crop_modern/src/image_0.png"
+                                 alt="image_0">
+                            <img src="supplementary/comparisons/wearable_shoes1_crop_modern/src/image_1.png"
+                                 alt="image_1">
+                            <!--          <img src="supplementary/comparisons/wearable_shoes1_crop_modern/src/image_2.png" alt="image_2">-->
+                            <img src="supplementary/comparisons/wearable_shoes1_crop_modern/src/image_3.png"
+                                 alt="image_3">
+                            <img src="supplementary/comparisons/wearable_shoes1_crop_modern/src/image_4.png"
+                                 alt="image_4">
+                        </div>
+
+                        <div class="row prompt-row">
+                            <h2>
+                                \(\mathcal{P}^{shared}\): <i>"A plush slipper "</i>
+                                <span class="tab-spacer"></span>
+                                \(\mathcal{P}^{theme}\): <i>"modern"</i>
+                            </h2>
+                        </div>
+
+                        <div class="row images-row" data-row="flux">
+                            <div class="vertical-label">FLUX.1-dev</div>
+                            <img src="supplementary/comparisons/wearable_shoes1_crop_modern/flux/result_0.png"
+                                 alt="result_0">
+                            <img src="supplementary/comparisons/wearable_shoes1_crop_modern/flux/result_1.png"
+                                 alt="result_1">
+                            <!--          <img src="supplementary/comparisons/wearable_shoes1_crop_modern/flux/result_2.png" alt="result_2">-->
+                            <img src="supplementary/comparisons/wearable_shoes1_crop_modern/flux/result_3.png"
+                                 alt="result_3">
+                            <img src="supplementary/comparisons/wearable_shoes1_crop_modern/flux/result_4.png"
+                                 alt="result_4">
+                        </div>
+
+                        <div class="row images-row" data-row="kontext">
+                            <div class="vertical-label">FLUX.1 Kontext</div>
+                            <img src="supplementary/comparisons/wearable_shoes1_crop_modern/kontext/result_0.png"
+                                 alt="result_0">
+                            <img src="supplementary/comparisons/wearable_shoes1_crop_modern/kontext/result_1.png"
+                                 alt="result_1">
+                            <!--          <img src="supplementary/comparisons/wearable_shoes1_crop_modern/kontext/result_2.png" alt="result_2">-->
+                            <img src="supplementary/comparisons/wearable_shoes1_crop_modern/kontext/result_3.png"
+                                 alt="result_3">
+                            <img src="supplementary/comparisons/wearable_shoes1_crop_modern/kontext/result_4.png"
+                                 alt="result_4">
+                        </div>
+
+                        <div class="row images-row" data-row="iclora">
+                            <div class="vertical-label">IC-LoRA</div>
+                            <img src="supplementary/comparisons/wearable_shoes1_crop_modern/iclora/result_0.png"
+                                 alt="result_0">
+                            <img src="supplementary/comparisons/wearable_shoes1_crop_modern/iclora/result_1.png"
+                                 alt="result_1">
+                            <!--          <img src="supplementary/comparisons/wearable_shoes1_crop_modern/iclora/result_2.png" alt="result_2">-->
+                            <img src="supplementary/comparisons/wearable_shoes1_crop_modern/iclora/result_3.png"
+                                 alt="result_3">
+                            <img src="supplementary/comparisons/wearable_shoes1_crop_modern/iclora/result_4.png"
+                                 alt="result_4">
+                        </div>
+
+                        <div class="row images-row" data-row="edicho_inpaint">
+                            <div class="vertical-label">Edicho-Inpaint*</div>
+                            <img src="supplementary/comparisons/wearable_shoes1_crop_modern/edicho_inpaint/result_0.png"
+                                 alt="result_0">
+                            <img src="supplementary/comparisons/wearable_shoes1_crop_modern/edicho_inpaint/result_1.png"
+                                 alt="result_1">
+                            <!--          <img src="supplementary/comparisons/wearable_shoes1_crop_modern/edicho_inpaint/result_2.png" alt="result_2">-->
+                            <img src="supplementary/comparisons/wearable_shoes1_crop_modern/edicho_inpaint/result_3.png"
+                                 alt="result_3">
+                            <img src="supplementary/comparisons/wearable_shoes1_crop_modern/edicho_inpaint/result_4.png"
+                                 alt="result_4">
+                        </div>
+
+                        <div class="row images-row" data-row="edicho">
+                            <div class="vertical-label">Edicho</div>
+                            <img src="supplementary/comparisons/wearable_shoes1_crop_modern/edicho/result_0.jpg"
+                                 alt="result_0">
+                            <img src="supplementary/comparisons/wearable_shoes1_crop_modern/edicho/result_1.jpg"
+                                 alt="result_1">
+                            <!--          <img src="supplementary/comparisons/wearable_shoes1_crop_modern/edicho/result_2.jpg" alt="result_2">-->
+                            <img src="supplementary/comparisons/wearable_shoes1_crop_modern/edicho/result_3.jpg"
+                                 alt="result_3">
+                            <img src="supplementary/comparisons/wearable_shoes1_crop_modern/edicho/result_4.jpg"
+                                 alt="result_4">
+                        </div>
+
+                        <div class="row images-row" data-row="ours">
+                            <div class="vertical-label">Ours</div>
+                            <img src="supplementary/comparisons/wearable_shoes1_crop_modern/ours/result_0.png"
+                                 alt="result_0">
+                            <img src="supplementary/comparisons/wearable_shoes1_crop_modern/ours/result_1.png"
+                                 alt="result_1">
+                            <!--          <img src="supplementary/comparisons/wearable_shoes1_crop_modern/ours/result_2.png" alt="result_2">-->
+                            <img src="supplementary/comparisons/wearable_shoes1_crop_modern/ours/result_3.png"
+                                 alt="result_3">
+                            <img src="supplementary/comparisons/wearable_shoes1_crop_modern/ours/result_4.png"
+                                 alt="result_4">
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="image-block">
+
+                        <div class="row images-row" data-row="src">
+                            <div class="vertical-label">Source Set</div>
+                            <img src="supplementary/comparisons/transport_car2/src/image_0.png" alt="image_0">
+                            <!--          <img src="supplementary/comparisons/transport_car2/src/image_1.png" alt="image_1">-->
+                            <img src="supplementary/comparisons/transport_car2/src/image_2.png" alt="image_2">
+                            <img src="supplementary/comparisons/transport_car2/src/image_3.png" alt="image_3">
+                            <img src="supplementary/comparisons/transport_car2/src/image_4.png" alt="image_4">
+                            <!--          <img src="supplementary/comparisons/transport_car2/src/image_5.png" alt="image_5">-->
+                            <img src="supplementary/comparisons/transport_car2/src/image_6.png" alt="image_6">
+                            <img src="supplementary/comparisons/transport_car2/src/image_7.png" alt="image_7">
+                            <img src="supplementary/comparisons/transport_car2/src/image_8.png" alt="image_8">
+                        </div>
+                        <div class="row prompt-row">
+                            <h2>
+                                \(\mathcal{P}^{shared}\): <i>"two-colored vintage car"</i>
+                                <span class="tab-spacer"></span>
+                                \(\mathcal{P}^{theme}\): <i>"vintage"</i>
+                            </h2>
+                        </div>
+                        <div class="row images-row" data-row="flux">
+                            <div class="vertical-label">FLUX.1-dev</div>
+                            <img src="supplementary/comparisons/transport_car2/flux/result_0.png" alt="result_0">
+                            <!--          <img src="supplementary/comparisons/transport_car2/flux/result_1.png" alt="result_1">-->
+                            <img src="supplementary/comparisons/transport_car2/flux/result_2.png" alt="result_2">
+                            <img src="supplementary/comparisons/transport_car2/flux/result_3.png" alt="result_3">
+                            <img src="supplementary/comparisons/transport_car2/flux/result_4.png" alt="result_4">
+                            <!--          <img src="supplementary/comparisons/transport_car2/flux/result_5.png" alt="result_5">-->
+                            <img src="supplementary/comparisons/transport_car2/flux/result_6.png" alt="result_6">
+                            <img src="supplementary/comparisons/transport_car2/flux/result_7.png" alt="result_7">
+                            <img src="supplementary/comparisons/transport_car2/flux/result_8.png" alt="result_8">
+                        </div>
+                        <div class="row images-row" data-row="kontext">
+                            <div class="vertical-label">FLUX Kontext</div>
+                            <img src="supplementary/comparisons/transport_car2/kontext/result_0.png" alt="result_0">
+                            <!--          <img src="supplementary/comparisons/transport_car2/kontext/result_1.png" alt="result_1">-->
+                            <img src="supplementary/comparisons/transport_car2/kontext/result_2.png" alt="result_2">
+                            <img src="supplementary/comparisons/transport_car2/kontext/result_3.png" alt="result_3">
+                            <img src="supplementary/comparisons/transport_car2/kontext/result_4.png" alt="result_4">
+                            <!--          <img src="supplementary/comparisons/transport_car2/kontext/result_5.png" alt="result_5">-->
+                            <img src="supplementary/comparisons/transport_car2/kontext/result_6.png" alt="result_6">
+                            <img src="supplementary/comparisons/transport_car2/kontext/result_7.png" alt="result_7">
+                            <img src="supplementary/comparisons/transport_car2/kontext/result_8.png" alt="result_8">
+                        </div>
+                        <div class="row images-row" data-row="iclora">
+                            <div class="vertical-label">IC-LoRA</div>
+                            <img src="supplementary/comparisons/transport_car2/iclora/result_0.png" alt="result_0">
+                            <!--          <img src="supplementary/comparisons/transport_car2/iclora/result_1.png" alt="result_1">-->
+                            <img src="supplementary/comparisons/transport_car2/iclora/result_2.png" alt="result_2">
+                            <img src="supplementary/comparisons/transport_car2/iclora/result_3.png" alt="result_3">
+                            <img src="supplementary/comparisons/transport_car2/iclora/result_4.png" alt="result_4">
+                            <!--          <img src="supplementary/comparisons/transport_car2/iclora/result_5.png" alt="result_5">-->
+                            <img src="supplementary/comparisons/transport_car2/iclora/result_6.png" alt="result_6">
+                            <img src="supplementary/comparisons/transport_car2/iclora/result_7.png" alt="result_7">
+                            <img src="supplementary/comparisons/transport_car2/iclora/result_8.png" alt="result_8">
+                        </div>
+                        <div class="row images-row" data-row="edicho_inpaint">
+                            <div class="vertical-label">Edicho-Inpaint*</div>
+                            <img src="supplementary/comparisons/transport_car2/edicho_inpaint/result_0.png"
+                                 alt="result_0">
+                            <!--          <img src="supplementary/comparisons/transport_car2/edicho_inpaint/result_1.png" alt="result_1">-->
+                            <img src="supplementary/comparisons/transport_car2/edicho_inpaint/result_2.png"
+                                 alt="result_2">
+                            <img src="supplementary/comparisons/transport_car2/edicho_inpaint/result_3.png"
+                                 alt="result_3">
+                            <img src="supplementary/comparisons/transport_car2/edicho_inpaint/result_4.png"
+                                 alt="result_4">
+                            <!--          <img src="supplementary/comparisons/transport_car2/edicho_inpaint/result_5.png" alt="result_5">-->
+                            <img src="supplementary/comparisons/transport_car2/edicho_inpaint/result_6.png"
+                                 alt="result_6">
+                            <img src="supplementary/comparisons/transport_car2/edicho_inpaint/result_7.png"
+                                 alt="result_7">
+                            <img src="supplementary/comparisons/transport_car2/edicho_inpaint/result_8.png"
+                                 alt="result_8">
+                        </div>
+                        <div class="row images-row" data-row="ours">
+                            <div class="vertical-label">Ours</div>
+                            <img src="supplementary/comparisons/transport_car2/ours/result_0.png" alt="result_0">
+                            <!--          <img src="supplementary/comparisons/transport_car2/ours/result_1.png" alt="result_1">-->
+                            <img src="supplementary/comparisons/transport_car2/ours/result_2.png" alt="result_2">
+                            <img src="supplementary/comparisons/transport_car2/ours/result_3.png" alt="result_3">
+                            <img src="supplementary/comparisons/transport_car2/ours/result_4.png" alt="result_4">
+                            <!--          <img src="supplementary/comparisons/transport_car2/ours/result_5.png" alt="result_5">-->
+                            <img src="supplementary/comparisons/transport_car2/ours/result_6.png" alt="result_6">
+                            <img src="supplementary/comparisons/transport_car2/ours/result_7.png" alt="result_7">
+                            <img src="supplementary/comparisons/transport_car2/ours/result_8.png" alt="result_8">
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="view-all-wrapper">
+                <a href="supplementary.html#comparisons" class="view-all-link" target="_blank"
+                   rel="noopener noreferrer">
+                    View all →
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End image carousel -->
+
+<!--&lt;!&ndash; Youtube video &ndash;&gt;-->
+<!--<section class="hero is-small is-light">-->
+<!--  <div class="hero-body">-->
+<!--    <div class="container">-->
+<!--      &lt;!&ndash; Paper video. &ndash;&gt;-->
+<!--      <h2 class="title is-3">Video Presentation</h2>-->
+<!--      <div class="columns is-centered has-text-centered">-->
+<!--        <div class="column is-four-fifths">-->
+
+<!--          <div class="publication-video">-->
+<!--            &lt;!&ndash; Youtube embed code here &ndash;&gt;-->
+<!--            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+<!--&lt;!&ndash; End youtube video &ndash;&gt;-->
+
+<!--References citation -->
+<section class="section" id="References">
+    <div class="container is-max-desktop content">
+        <h2 class="title">References</h2>
+        <pre><code>
+[1] Lianghua Huang, Wei Wang, Zhi-Fan Wu, Yupeng Shi, Huanzhang Dou, Chen Liang, Yutong Feng, Yu Liu, and Jingren Zhou. In-context lora for diffusion transformers. 2024. 2, 6, 7, 11
+[2] Chaehun Shin, Jooyoung Choi, Heeseung Kim, and Sungroh Yoon. Large-scale text-to-image model with inpainting is a zero-shot subject-driven image generator.
+[3] Vladimir Kulikov, Matan Kleiner, Inbar Huberman-Spiegelglas, and Tomer Michaeli. Flowedit: Inversion-free text-based editing using pre-trained flow models. arXiv preprint arXiv:2412.08629, 2024. 8
+      </code></pre>
+    </div>
+</section>
+
+<!--&lt;!&ndash;BibTex citation &ndash;&gt;-->
+<!--<section class="section" id="BibTeX">-->
+<!--    <div class="container is-max-desktop content">-->
+<!--        <h2 class="title">BibTeX</h2>-->
+<!--        <pre><code>-->
+<!--@article{matchandfuse2025,-->
+<!--  title={Match-and-Fuse: Consistent Generation from Unstructured Image Sets},-->
+<!--  author={Feingold, Kate and Kaduri, Omri and Dekel, Tali},-->
+<!--  journal={arXiv preprint arXiv:123.123},-->
+<!--  year={2025}-->
+<!--}-->
+<!--      </code></pre>-->
+<!--    </div>-->
+<!--</section>-->
+<!--&lt;!&ndash;End BibTex citation &ndash;&gt;-->
 
 <!--BibTex citation -->
-  <section class="section" id="BibTeX">
+<section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+        <h2 class="title">BibTeX</h2>
+        <pre><code>
+@article{matchandfuse2025,
+  title={Match-and-Fuse: Consistent Generation from Unstructured Image Sets},
+  author={Feingold, Kate and Kaduri, Omri and Dekel, Tali},
+  year={2025}
+}
+      </code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
 
+<footer class="footer">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-8">
+                <div class="content">
 
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
+                    <p>
+                        This page was built using the <a
+                            href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic
+                        Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io"
+                                                                                target="_blank">Nerfies</a> project
+                        page.
+                        You are free to borrow the source code of this website, we just ask that you link back to this
+                        page in the footer. <br> This website is licensed under a <a rel="license"
+                                                                                     href="http://creativecommons.org/licenses/by-sa/4.0/"
+                                                                                     target="_blank">Creative
+                        Commons Attribution-ShareAlike 4.0 International License</a>.
+                    </p>
 
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </footer>
 
 <!-- Statcounter tracking code -->
-  
+
 <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
-    <!-- End of Statcounter Code -->
+<!-- End of Statcounter Code -->
 
-  </body>
-  </html>
+<button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+    <!-- Chevron Up Icon (SVG) -->
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M6 15l6-6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+</button>
+
+<script>
+    (function () {
+        const btn = document.getElementById('backToTop');
+        const showAt = parseInt(getComputedStyle(document.documentElement)
+            .getPropertyValue('--threshold')) || 480;
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Toggle visibility
+        const toggle = () => {
+            if (window.scrollY > showAt) {
+                btn.classList.add('is-visible');
+            } else {
+                btn.classList.remove('is-visible');
+            }
+        };
+
+        // Smooth scroll without conflict
+        btn.addEventListener('click', () => {
+            // Temporarily disable global smooth scroll
+            const html = document.documentElement;
+            const prev = html.style.scrollBehavior;
+            html.style.scrollBehavior = 'auto';
+
+            window.scrollTo({top: 0, behavior: prefersReduced ? 'auto' : 'smooth'});
+
+            // Restore after the scroll animation ends (~500ms is safe)
+            setTimeout(() => {
+                html.style.scrollBehavior = prev;
+            }, 500);
+        });
+
+        toggle();
+        window.addEventListener('scroll', toggle, {passive: true});
+    })();
+</script>
+
+<!--<script>-->
+<!--    (function () {-->
+
+<!--        const apply = (checkbox) => {-->
+<!--            const key = checkbox.dataset.row;-->
+<!--            if (!key) return;-->
+<!--            document.querySelectorAll(`.images-row[data-row="${key}"]`).forEach(el => {-->
+<!--                el.classList.toggle('is-hidden', !checkbox.checked);-->
+<!--            });-->
+<!--        };-->
+
+<!--        document.querySelectorAll('input[type="checkbox"][data-row]').forEach(cb => {-->
+<!--            // cb.checked = true; // Always default ON-->
+<!--            apply(cb);-->
+<!--            cb.addEventListener('change', () => apply(cb));-->
+<!--        });-->
+
+<!--    })();-->
+<!--</script>-->
+
+<!--Not bad-->
+<!--<script>-->
+<!--    (function () {-->
+<!--        const apply = (checkbox) => {-->
+<!--            const key = checkbox.dataset.row;-->
+<!--            if (!key) return;-->
+<!--            document.querySelectorAll(`.images-row[data-row="${key}"]`).forEach(el => {-->
+<!--                el.classList.toggle('is-hidden', !checkbox.checked);-->
+<!--            });-->
+<!--        };-->
+
+<!--        document.querySelectorAll('input[type="checkbox"][data-row]').forEach(cb => {-->
+<!--            // DO NOT call apply(cb) here: initial state comes from HTML-->
+<!--            cb.addEventListener('change', () => apply(cb));-->
+<!--        });-->
+<!--    })();-->
+<!--</script>-->
+
+<!--<script>-->
+<!--    (function () {-->
+<!--        const apply = (checkbox) => {-->
+<!--            const key = checkbox.dataset.row;-->
+<!--            if (!key) return;-->
+<!--            document.querySelectorAll(`.images-row[data-row="${key}"]`).forEach(el => {-->
+<!--                el.style.display = checkbox.checked ? '' : 'none';-->
+<!--            });-->
+<!--        };-->
+
+<!--        document.querySelectorAll('input[type="checkbox"][data-row]').forEach(cb => {-->
+<!--            // Initial state comes from HTML (style/display)-->
+<!--            cb.addEventListener('change', () => apply(cb));-->
+<!--        });-->
+<!--    })();-->
+<!--</script>-->
+
+<script>
+    (function () {
+        const apply = (checkbox) => {
+            const key = checkbox.dataset.row;
+            if (!key) return;
+            document.querySelectorAll(`.images-row[data-row="${key}"]`).forEach(el => {
+                el.classList.toggle('is-hidden', !checkbox.checked);
+            });
+        };
+
+        const checkboxes = Array.from(
+            document.querySelectorAll('input[type="checkbox"][data-row]')
+        );
+
+        // Normal behavior: respond to user toggles
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', () => apply(cb));
+        });
+
+        // NEW: after everything (including carousels) has initialized,
+        // sync the rows to the checkbox states
+        window.addEventListener('load', () => {
+            checkboxes.forEach(cb => apply(cb));
+        });
+    })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,2792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Supplementary Materials</title>
+    <link rel="icon"
+          href="data:image/svg+xml,
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+        <text y='0.9em' font-size='90'>🏞️️</text>
+      </svg>">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="static/js/custom.js"></script>
+
+</head>
+
+<body>
+
+<section class="hero hero-wide">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h2 class="title is-3 publication-title">
+                        Match-and-Fuse: Consistent Generation from Unstructured Image Sets
+                    </h2>
+                    <h3 class="subtitle is-4">Supplementary Materials</h3>
+                    <span class="link-block">
+                                <a href="index.html" target="_self"
+                                   class="external-link button is-normal is-rounded">
+                      <span class="icon">
+                        <i class="fas fa-home"></i>
+                      </span>
+                      <span>Home</span>
+                    </a>
+                             </span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section hero is-light" id="contents">
+    <div class="container is-max-desktop has-text-centered">
+        <h2 class="title is-3" style="margin-bottom: 1rem;">Contents</h2>
+
+        <nav class="toc">
+            <a href="#results">Results</a>
+            <a href="#storyboards">Storyboards</a>
+            <a href="#localized">Localized Editing</a>
+            <a href="#comparisons">Comparisons</a>
+            <a href="#comparisons_ext">Extended Comparisons</a>
+            <a href="#ablation">Ablation</a>
+        </nav>
+
+        <hr class="toc-divider">
+    </div>
+</section>
+
+<section id="results" class="section hero">
+    <!-- Title + description -->
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-full">
+                <h2 class="title is-3">Results</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        We provide the complete image sets used in <strong>Figs.</strong> 1 and 8, along with additional
+                        results.
+                    </p>
+
+                    <p>
+                        Match-and-Fuse generates consistent content of rigid and non-rigid shared elements, single and
+                        multi-subject,
+                        with shared or varying background, preserving fine-grained consistency in textures, small
+                        details, and typography.
+                        Notably, it can generate consistent long sequences.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full-width image block -->
+    <div class="container is-fluid">
+        <!-- Block of dog7_winter and dog7_autumn -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/results/dog7_winter/image_0.png" alt="image_0">
+                <img src="supplementary/results/dog7_winter/image_1.png" alt="image_1">
+                <img src="supplementary/results/dog7_winter/image_2.png" alt="image_2">
+                <img src="supplementary/results/dog7_winter/image_3.png" alt="image_3">
+                <img src="supplementary/results/dog7_winter/image_4.png" alt="image_4">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/dog7_winter/result_0.png" alt="result_0">
+                <img src="supplementary/results/dog7_winter/result_1.png" alt="result_1">
+                <img src="supplementary/results/dog7_winter/result_2.png" alt="result_2">
+                <img src="supplementary/results/dog7_winter/result_3.png" alt="result_3">
+                <img src="supplementary/results/dog7_winter/result_4.png" alt="result_4">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"A dog-shaped balloon"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"winter"</i>
+                </h2>
+            </div>
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/dog7_autumn/result_0.png" alt="result_0">
+                <img src="supplementary/results/dog7_autumn/result_1.png" alt="result_1">
+                <img src="supplementary/results/dog7_autumn/result_2.png" alt="result_2">
+                <img src="supplementary/results/dog7_autumn/result_3.png" alt="result_3">
+                <img src="supplementary/results/dog7_autumn/result_4.png" alt="result_4">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"A dog sculpture"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"autumn"</i>
+                </h2>
+            </div>
+
+        </div>
+
+
+        <!-- Block of luggage_purse1_crop_luxury and -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/results/luggage_purse1_crop_luxury/image_0.png" alt="image_0">
+                <img src="supplementary/results/luggage_purse1_crop_luxury/image_1.png" alt="image_1">
+                <img src="supplementary/results/luggage_purse1_crop_luxury/image_2.png" alt="image_2">
+                <img src="supplementary/results/luggage_purse1_crop_luxury/image_3.png" alt="image_3">
+                <img src="supplementary/results/luggage_purse1_crop_luxury/image_4.png" alt="image_4">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/luggage_purse1_crop_luxury/result_0.png" alt="result_0">
+                <img src="supplementary/results/luggage_purse1_crop_luxury/result_1.png" alt="result_1">
+                <img src="supplementary/results/luggage_purse1_crop_luxury/result_2.png" alt="result_2">
+                <img src="supplementary/results/luggage_purse1_crop_luxury/result_3.png" alt="result_3">
+                <img src="supplementary/results/luggage_purse1_crop_luxury/result_4.png" alt="result_4">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Blue-white bag"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"luxury"</i>
+                </h2>
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/luggage_purse1_crop_retro/result_0.png" alt="result_0">
+                <img src="supplementary/results/luggage_purse1_crop_retro/result_1.png" alt="result_1">
+                <img src="supplementary/results/luggage_purse1_crop_retro/result_2.png" alt="result_2">
+                <img src="supplementary/results/luggage_purse1_crop_retro/result_3.png" alt="result_3">
+                <img src="supplementary/results/luggage_purse1_crop_retro/result_4.png" alt="result_4">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Vintage bag"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"retro"</i>
+                </h2>
+            </div>
+
+        </div>
+
+
+        <!-- Block of pet_cat1_winter -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/results/pet_cat1_winter/image_0.png" alt="image_0">
+                <img src="supplementary/results/pet_cat1_winter/image_1.png" alt="image_1">
+                <img src="supplementary/results/pet_cat1_winter/image_2.png" alt="image_2">
+                <img src="supplementary/results/pet_cat1_winter/image_3.png" alt="image_3">
+                <img src="supplementary/results/pet_cat1_winter/image_4.png" alt="image_4">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/pet_cat1_winter/result_0.png" alt="result_0">
+                <img src="supplementary/results/pet_cat1_winter/result_1.png" alt="result_1">
+                <img src="supplementary/results/pet_cat1_winter/result_2.png" alt="result_2">
+                <img src="supplementary/results/pet_cat1_winter/result_3.png" alt="result_3">
+                <img src="supplementary/results/pet_cat1_winter/result_4.png" alt="result_4">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"A cat-shaped balloon"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"winter"</i>
+                </h2>
+            </div>
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/pet_cat1_autumn_p2/result_0.png" alt="result_0">
+                <img src="supplementary/results/pet_cat1_autumn_p2/result_1.png" alt="result_1">
+                <img src="supplementary/results/pet_cat1_autumn_p2/result_2.png" alt="result_2">
+                <img src="supplementary/results/pet_cat1_autumn_p2/result_3.png" alt="result_3">
+                <img src="supplementary/results/pet_cat1_autumn_p2/result_4.png" alt="result_4">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Extraterrestrial alien pet"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"autumn"</i>
+                </h2>
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/pet_cat1_autumn_p1/result_0.png" alt="result_0">
+                <img src="supplementary/results/pet_cat1_autumn_p1/result_1.png" alt="result_1">
+                <img src="supplementary/results/pet_cat1_autumn_p1/result_2.png" alt="result_2">
+                <img src="supplementary/results/pet_cat1_autumn_p1/result_3.png" alt="result_3">
+                <img src="supplementary/results/pet_cat1_autumn_p1/result_4.png" alt="result_4">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"A cat knitted from a two-colored yarn"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"autumn"</i>
+                </h2>
+            </div>
+
+        </div>
+
+
+        <!-- Block of dog8_autumn -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/results/dog8_autumn/image_0.png" alt="image_0">
+                <img src="supplementary/results/dog8_autumn/image_1.png" alt="image_1">
+                <img src="supplementary/results/dog8_autumn/image_2.png" alt="image_2">
+                <img src="supplementary/results/dog8_autumn/image_3.png" alt="image_3">
+                <img src="supplementary/results/dog8_autumn/image_4.png" alt="image_4">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/dog8_autumn/result_0.png" alt="result_0">
+                <img src="supplementary/results/dog8_autumn/result_1.png" alt="result_1">
+                <img src="supplementary/results/dog8_autumn/result_2.png" alt="result_2">
+                <img src="supplementary/results/dog8_autumn/result_3.png" alt="result_3">
+                <img src="supplementary/results/dog8_autumn/result_4.png" alt="result_4">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Black-white knitted dog"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"autumn"</i>
+                </h2>
+            </div>
+
+        </div>
+
+        <!-- Block of sunny_girls_cartoon -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/results/sunny_girls_cartoon/image_0.png" alt="image_0">
+                <img src="supplementary/results/sunny_girls_cartoon/image_1.png" alt="image_1">
+                <img src="supplementary/results/sunny_girls_cartoon/image_2.png" alt="image_2">
+                <img src="supplementary/results/sunny_girls_cartoon/image_3.png" alt="image_3">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/sunny_girls_cartoon/result_0.png" alt="result_0">
+                <img src="supplementary/results/sunny_girls_cartoon/result_1.png" alt="result_1">
+                <img src="supplementary/results/sunny_girls_cartoon/result_2.png" alt="result_2">
+                <img src="supplementary/results/sunny_girls_cartoon/result_3.png" alt="result_3">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Cartoon characters"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"cartoon"</i>
+                </h2>
+            </div>
+
+        </div>
+
+        <!-- Block of can_dreamy-summer -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/results/can_dreamy-summer/image_0.png" alt="image_0">
+                <img src="supplementary/results/can_dreamy-summer/image_1.png" alt="image_1">
+                <img src="supplementary/results/can_dreamy-summer/image_2.png" alt="image_2">
+                <img src="supplementary/results/can_dreamy-summer/image_3.png" alt="image_3">
+                <img src="supplementary/results/can_dreamy-summer/image_4.png" alt="image_4">
+                <img src="supplementary/results/can_dreamy-summer/image_5.png" alt="image_5">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/can_dreamy-summer/result_0.png" alt="result_0">
+                <img src="supplementary/results/can_dreamy-summer/result_1.png" alt="result_1">
+                <img src="supplementary/results/can_dreamy-summer/result_2.png" alt="result_2">
+                <img src="supplementary/results/can_dreamy-summer/result_3.png" alt="result_3">
+                <img src="supplementary/results/can_dreamy-summer/result_4.png" alt="result_4">
+                <img src="supplementary/results/can_dreamy-summer/result_5.png" alt="result_5">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"A 'Summer Potion' can"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"dreamy summer"</i>
+                </h2>
+            </div>
+
+        </div>
+
+        <!-- Block of coffee_martini_inter-galactic -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/results/coffee_martini_inter-galactic/image_0.png" alt="image_0">
+                <img src="supplementary/results/coffee_martini_inter-galactic/image_1.png" alt="image_1">
+                <img src="supplementary/results/coffee_martini_inter-galactic/image_2.png" alt="image_2">
+                <img src="supplementary/results/coffee_martini_inter-galactic/image_3.png" alt="image_3">
+                <img src="supplementary/results/coffee_martini_inter-galactic/image_4.png" alt="image_4">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/coffee_martini_inter-galactic/result_0.png" alt="result_0">
+                <img src="supplementary/results/coffee_martini_inter-galactic/result_1.png" alt="result_1">
+                <img src="supplementary/results/coffee_martini_inter-galactic/result_2.png" alt="result_2">
+                <img src="supplementary/results/coffee_martini_inter-galactic/result_3.png" alt="result_3">
+                <img src="supplementary/results/coffee_martini_inter-galactic/result_4.png" alt="result_4">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"A man making a cocktail"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"inter-galactic kitchen"</i>
+                </h2>
+            </div>
+
+        </div>
+
+        <!-- Block of transport_car3_retro -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/results/transport_car3_retro/image_0.png" alt="image_0">
+                <img src="supplementary/results/transport_car3_retro/image_1.png" alt="image_1">
+                <img src="supplementary/results/transport_car3_retro/image_2.png" alt="image_2">
+                <img src="supplementary/results/transport_car3_retro/image_3.png" alt="image_3">
+                <img src="supplementary/results/transport_car3_retro/image_4.png" alt="image_4">
+                <img src="supplementary/results/transport_car3_retro/image_5.png" alt="image_5">
+                <img src="supplementary/results/transport_car3_retro/image_6.png" alt="image_6">
+                <img src="supplementary/results/transport_car3_retro/image_7.png" alt="image_7">
+                <img src="supplementary/results/transport_car3_retro/image_8.png" alt="image_8">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/transport_car3_retro/result_0.png" alt="result_0">
+                <img src="supplementary/results/transport_car3_retro/result_1.png" alt="result_1">
+                <img src="supplementary/results/transport_car3_retro/result_2.png" alt="result_2">
+                <img src="supplementary/results/transport_car3_retro/result_3.png" alt="result_3">
+                <img src="supplementary/results/transport_car3_retro/result_4.png" alt="result_4">
+                <img src="supplementary/results/transport_car3_retro/result_5.png" alt="result_5">
+                <img src="supplementary/results/transport_car3_retro/result_6.png" alt="result_6">
+                <img src="supplementary/results/transport_car3_retro/result_7.png" alt="result_7">
+                <img src="supplementary/results/transport_car3_retro/result_8.png" alt="result_8">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"70s car"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"retro"</i>
+                </h2>
+            </div>
+
+        </div>
+
+        <!-- Block of person_3_crop_claymotion -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/results/person_3_crop_claymotion/image_0.png" alt="image_0">
+                <img src="supplementary/results/person_3_crop_claymotion/image_1.png" alt="image_1">
+                <img src="supplementary/results/person_3_crop_claymotion/image_2.png" alt="image_2">
+                <img src="supplementary/results/person_3_crop_claymotion/image_3.png" alt="image_3">
+                <img src="supplementary/results/person_3_crop_claymotion/image_4.png" alt="image_4">
+                <img src="supplementary/results/person_3_crop_claymotion/image_5.png" alt="image_5">
+                <img src="supplementary/results/person_3_crop_claymotion/image_6.png" alt="image_6">
+                <img src="supplementary/results/person_3_crop_claymotion/image_7.png" alt="image_7">
+                <img src="supplementary/results/person_3_crop_claymotion/image_8.png" alt="image_8">
+                <img src="supplementary/results/person_3_crop_claymotion/image_9.png" alt="image_9">
+                <img src="supplementary/results/person_3_crop_claymotion/image_10.png" alt="image_10">
+                <img src="supplementary/results/person_3_crop_claymotion/image_11.png" alt="image_11">
+                <img src="supplementary/results/person_3_crop_claymotion/image_12.png" alt="image_12">
+                <img src="supplementary/results/person_3_crop_claymotion/image_13.png" alt="image_13">
+                <img src="supplementary/results/person_3_crop_claymotion/image_14.png" alt="image_14">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/person_3_crop_claymotion/result_0.png" alt="result_0">
+                <img src="supplementary/results/person_3_crop_claymotion/result_1.png" alt="result_1">
+                <img src="supplementary/results/person_3_crop_claymotion/result_2.png" alt="result_2">
+                <img src="supplementary/results/person_3_crop_claymotion/result_3.png" alt="result_3">
+                <img src="supplementary/results/person_3_crop_claymotion/result_4.png" alt="result_4">
+                <img src="supplementary/results/person_3_crop_claymotion/result_5.png" alt="result_5">
+                <img src="supplementary/results/person_3_crop_claymotion/result_6.png" alt="result_6">
+                <img src="supplementary/results/person_3_crop_claymotion/result_7.png" alt="result_7">
+                <img src="supplementary/results/person_3_crop_claymotion/result_8.png" alt="result_8">
+                <img src="supplementary/results/person_3_crop_claymotion/result_9.png" alt="result_9">
+                <img src="supplementary/results/person_3_crop_claymotion/result_10.png" alt="result_10">
+                <img src="supplementary/results/person_3_crop_claymotion/result_11.png" alt="result_11">
+                <img src="supplementary/results/person_3_crop_claymotion/result_12.png" alt="result_12">
+                <img src="supplementary/results/person_3_crop_claymotion/result_13.png" alt="result_13">
+                <img src="supplementary/results/person_3_crop_claymotion/result_14.png" alt="result_14">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Claymation character in glasses"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"claymation"</i>
+                </h2>
+            </div>
+
+        </div>
+
+        <!-- Block of person_2_Pixar -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/results/person_2_Pixar/image_0.png" alt="image_0">
+                <img src="supplementary/results/person_2_Pixar/image_1.png" alt="image_1">
+                <img src="supplementary/results/person_2_Pixar/image_2.png" alt="image_2">
+                <img src="supplementary/results/person_2_Pixar/image_3.png" alt="image_3">
+                <img src="supplementary/results/person_2_Pixar/image_4.png" alt="image_4">
+                <img src="supplementary/results/person_2_Pixar/image_5.png" alt="image_5">
+                <img src="supplementary/results/person_2_Pixar/image_6.png" alt="image_6">
+                <img src="supplementary/results/person_2_Pixar/image_7.png" alt="image_7">
+                <img src="supplementary/results/person_2_Pixar/image_8.png" alt="image_8">
+                <img src="supplementary/results/person_2_Pixar/image_9.png" alt="image_9">
+                <img src="supplementary/results/person_2_Pixar/image_10.png" alt="image_9">
+                <img src="supplementary/results/person_2_Pixar/image_11.png" alt="image_9">
+                <img src="supplementary/results/person_2_Pixar/image_12.png" alt="image_9">
+                <img src="supplementary/results/person_2_Pixar/image_13.png" alt="image_9">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/person_2_Pixar/result_0.png" alt="result_0">
+                <img src="supplementary/results/person_2_Pixar/result_1.png" alt="result_1">
+                <img src="supplementary/results/person_2_Pixar/result_2.png" alt="result_2">
+                <img src="supplementary/results/person_2_Pixar/result_3.png" alt="result_3">
+                <img src="supplementary/results/person_2_Pixar/result_4.png" alt="result_4">
+                <img src="supplementary/results/person_2_Pixar/result_5.png" alt="result_5">
+                <img src="supplementary/results/person_2_Pixar/result_6.png" alt="result_6">
+                <img src="supplementary/results/person_2_Pixar/result_7.png" alt="result_7">
+                <img src="supplementary/results/person_2_Pixar/result_8.png" alt="result_8">
+                <img src="supplementary/results/person_2_Pixar/result_9.png" alt="result_9">
+                <img src="supplementary/results/person_2_Pixar/result_10.png" alt="result_9">
+                <img src="supplementary/results/person_2_Pixar/result_11.png" alt="result_9">
+                <img src="supplementary/results/person_2_Pixar/result_12.png" alt="result_9">
+                <img src="supplementary/results/person_2_Pixar/result_13.png" alt="result_9">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Pixar character"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"Pixar"</i>
+                </h2>
+            </div>
+
+        </div>
+
+        <!-- Block of plushie_panda -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/results/plushie_panda/image_0.png" alt="image_0">
+                <img src="supplementary/results/plushie_panda/image_1.png" alt="image_1">
+                <img src="supplementary/results/plushie_panda/image_2.png" alt="image_2">
+                <img src="supplementary/results/plushie_panda/image_3.png" alt="image_3">
+                <img src="supplementary/results/plushie_panda/image_4.png" alt="image_4">
+                <img src="supplementary/results/plushie_panda/image_5.png" alt="image_5">
+                <img src="supplementary/results/plushie_panda/image_6.png" alt="image_6">
+                <img src="supplementary/results/plushie_panda/image_7.png" alt="image_7">
+                <img src="supplementary/results/plushie_panda/image_8.png" alt="image_8">
+                <img src="supplementary/results/plushie_panda/image_9.png" alt="image_9">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/plushie_panda/result_0.png" alt="result_0">
+                <img src="supplementary/results/plushie_panda/result_1.png" alt="result_1">
+                <img src="supplementary/results/plushie_panda/result_2.png" alt="result_2">
+                <img src="supplementary/results/plushie_panda/result_3.png" alt="result_3">
+                <img src="supplementary/results/plushie_panda/result_4.png" alt="result_4">
+                <img src="supplementary/results/plushie_panda/result_5.png" alt="result_5">
+                <img src="supplementary/results/plushie_panda/result_6.png" alt="result_6">
+                <img src="supplementary/results/plushie_panda/result_7.png" alt="result_7">
+                <img src="supplementary/results/plushie_panda/result_8.png" alt="result_8">
+                <img src="supplementary/results/plushie_panda/result_9.png" alt="result_9">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"A real panda in a two-colored shirt"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"kindergarten"</i>
+                </h2>
+            </div>
+
+        </div>
+
+
+        <!-- Block of toy_unicorn -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/results/toy_unicorn/image_0.png" alt="image_0">
+                <img src="supplementary/results/toy_unicorn/image_1.png" alt="image_1">
+                <img src="supplementary/results/toy_unicorn/image_2.png" alt="image_2">
+                <img src="supplementary/results/toy_unicorn/image_3.png" alt="image_3">
+                <img src="supplementary/results/toy_unicorn/image_4.png" alt="image_4">
+                <img src="supplementary/results/toy_unicorn/image_5.png" alt="image_5">
+                <img src="supplementary/results/toy_unicorn/image_6.png" alt="image_6">
+                <img src="supplementary/results/toy_unicorn/image_7.png" alt="image_7">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/toy_unicorn/result_0.png" alt="result_0">
+                <img src="supplementary/results/toy_unicorn/result_1.png" alt="result_1">
+                <img src="supplementary/results/toy_unicorn/result_2.png" alt="result_2">
+                <img src="supplementary/results/toy_unicorn/result_3.png" alt="result_3">
+                <img src="supplementary/results/toy_unicorn/result_4.png" alt="result_4">
+                <img src="supplementary/results/toy_unicorn/result_5.png" alt="result_5">
+                <img src="supplementary/results/toy_unicorn/result_6.png" alt="result_6">
+                <img src="supplementary/results/toy_unicorn/result_7.png" alt="result_7">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"A hamster in a cute costume"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"winter"</i>
+                </h2>
+            </div>
+
+        </div>
+
+        <!-- Block of flower_2 -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/results/flower_2/image_0.png" alt="image_0">
+                <img src="supplementary/results/flower_2/image_1.png" alt="image_1">
+                <img src="supplementary/results/flower_2/image_2.png" alt="image_2">
+                <img src="supplementary/results/flower_2/image_3.png" alt="image_3">
+                <img src="supplementary/results/flower_2/image_4.png" alt="image_4">
+                <img src="supplementary/results/flower_2/image_5.png" alt="image_5">
+                <img src="supplementary/results/flower_2/image_6.png" alt="image_6">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/flower_2/result_0.png" alt="result_0">
+                <img src="supplementary/results/flower_2/result_1.png" alt="result_1">
+                <img src="supplementary/results/flower_2/result_2.png" alt="result_2">
+                <img src="supplementary/results/flower_2/result_3.png" alt="result_3">
+                <img src="supplementary/results/flower_2/result_4.png" alt="result_4">
+                <img src="supplementary/results/flower_2/result_5.png" alt="result_5">
+                <img src="supplementary/results/flower_2/result_6.png" alt="result_6">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"An exotic flower"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"jungle"</i>
+                </h2>
+            </div>
+
+        </div>
+
+        <!-- Block of plushie_happysad_crop -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/results/plushie_happysad_crop/image_0.png" alt="image_0">
+                <img src="supplementary/results/plushie_happysad_crop/image_1.png" alt="image_1">
+                <img src="supplementary/results/plushie_happysad_crop/image_2.png" alt="image_2">
+                <img src="supplementary/results/plushie_happysad_crop/image_3.png" alt="image_3">
+                <img src="supplementary/results/plushie_happysad_crop/image_4.png" alt="image_4">
+                <img src="supplementary/results/plushie_happysad_crop/image_5.png" alt="image_5">
+                <img src="supplementary/results/plushie_happysad_crop/image_6.png" alt="image_6">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/plushie_happysad_crop/result_0.png" alt="result_0">
+                <img src="supplementary/results/plushie_happysad_crop/result_1.png" alt="result_1">
+                <img src="supplementary/results/plushie_happysad_crop/result_2.png" alt="result_2">
+                <img src="supplementary/results/plushie_happysad_crop/result_3.png" alt="result_3">
+                <img src="supplementary/results/plushie_happysad_crop/result_4.png" alt="result_4">
+                <img src="supplementary/results/plushie_happysad_crop/result_5.png" alt="result_5">
+                <img src="supplementary/results/plushie_happysad_crop/result_6.png" alt="result_6">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"A flower toy"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"kids room"</i>
+                </h2>
+            </div>
+
+        </div>
+
+        <!-- Block of face_Pixar -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/results/face_Pixar/image_0.png" alt="image_0">
+                <img src="supplementary/results/face_Pixar/image_1.png" alt="image_1">
+                <img src="supplementary/results/face_Pixar/image_2.png" alt="image_2">
+                <img src="supplementary/results/face_Pixar/image_3.png" alt="image_3">
+                <img src="supplementary/results/face_Pixar/image_4.png" alt="image_4">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/face_Pixar/result_0.png" alt="result_0">
+                <img src="supplementary/results/face_Pixar/result_1.png" alt="result_1">
+                <img src="supplementary/results/face_Pixar/result_2.png" alt="result_2">
+                <img src="supplementary/results/face_Pixar/result_3.png" alt="result_3">
+                <img src="supplementary/results/face_Pixar/result_4.png" alt="result_4">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Pixar character"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"Pixar"</i>
+                </h2>
+            </div>
+
+        </div>
+
+
+        <!-- Block of scene_barn_gingerbread -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/results/scene_barn_gingerbread/image_0.png" alt="image_0">
+                <img src="supplementary/results/scene_barn_gingerbread/image_1.png" alt="image_1">
+                <img src="supplementary/results/scene_barn_gingerbread/image_2.png" alt="image_2">
+                <img src="supplementary/results/scene_barn_gingerbread/image_3.png" alt="image_3">
+                <img src="supplementary/results/scene_barn_gingerbread/image_4.png" alt="image_4">
+                <img src="supplementary/results/scene_barn_gingerbread/image_5.png" alt="image_5">
+                <img src="supplementary/results/scene_barn_gingerbread/image_6.png" alt="image_6">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/scene_barn_gingerbread/result_0.png" alt="result_0">
+                <img src="supplementary/results/scene_barn_gingerbread/result_1.png" alt="result_1">
+                <img src="supplementary/results/scene_barn_gingerbread/result_2.png" alt="result_2">
+                <img src="supplementary/results/scene_barn_gingerbread/result_3.png" alt="result_3">
+                <img src="supplementary/results/scene_barn_gingerbread/result_4.png" alt="result_4">
+                <img src="supplementary/results/scene_barn_gingerbread/result_5.png" alt="result_5">
+                <img src="supplementary/results/scene_barn_gingerbread/result_6.png" alt="result_6">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Gingerbread house"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"gingerbread world"</i>
+                </h2>
+            </div>
+
+        </div>
+
+        <!-- Block of dish_1 -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/results/dish_1/image_0.png" alt="image_0">
+                <img src="supplementary/results/dish_1/image_1.png" alt="image_1">
+                <img src="supplementary/results/dish_1/image_2.png" alt="image_2">
+                <img src="supplementary/results/dish_1/image_3.png" alt="image_3">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/dish_1/result_0.png" alt="result_0">
+                <img src="supplementary/results/dish_1/result_1.png" alt="result_1">
+                <img src="supplementary/results/dish_1/result_2.png" alt="result_2">
+                <img src="supplementary/results/dish_1/result_3.png" alt="result_3">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Fine-dining desert"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"luxury restaurant"</i>
+                </h2>
+            </div>
+
+        </div>
+
+        <!-- Block of monster_toy_graffiti -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/results/monster_toy_graffiti/image_0.png" alt="image_0">
+                <img src="supplementary/results/monster_toy_graffiti/image_1.png" alt="image_1">
+                <img src="supplementary/results/monster_toy_graffiti/image_2.png" alt="image_2">
+                <img src="supplementary/results/monster_toy_graffiti/image_3.png" alt="image_3">
+                <img src="supplementary/results/monster_toy_graffiti/image_4.png" alt="image_4">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/monster_toy_graffiti/result_0.png" alt="result_0">
+                <img src="supplementary/results/monster_toy_graffiti/result_1.png" alt="result_1">
+                <img src="supplementary/results/monster_toy_graffiti/result_2.png" alt="result_2">
+                <img src="supplementary/results/monster_toy_graffiti/result_3.png" alt="result_3">
+                <img src="supplementary/results/monster_toy_graffiti/result_4.png" alt="result_4">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Graffiti-styled monster toy"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"graffiti"</i>
+                </h2>
+            </div>
+
+        </div>
+
+        <!-- Block of transport_car8_retro -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/results/transport_car8_retro/image_0.png" alt="image_0">
+                <img src="supplementary/results/transport_car8_retro/image_1.png" alt="image_1">
+                <img src="supplementary/results/transport_car8_retro/image_2.png" alt="image_2">
+                <img src="supplementary/results/transport_car8_retro/image_3.png" alt="image_3">
+                <img src="supplementary/results/transport_car8_retro/image_4.png" alt="image_4">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/transport_car8_retro/result_0.png" alt="result_0">
+                <img src="supplementary/results/transport_car8_retro/result_1.png" alt="result_1">
+                <img src="supplementary/results/transport_car8_retro/result_2.png" alt="result_2">
+                <img src="supplementary/results/transport_car8_retro/result_3.png" alt="result_3">
+                <img src="supplementary/results/transport_car8_retro/result_4.png" alt="result_4">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Rusty car"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"retro"</i>
+                </h2>
+            </div>
+
+        </div>
+
+
+        <!-- Block of transport_car7 -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/results/transport_car7/image_0.png" alt="image_0">
+                <img src="supplementary/results/transport_car7/image_1.png" alt="image_1">
+                <img src="supplementary/results/transport_car7/image_2.png" alt="image_2">
+                <img src="supplementary/results/transport_car7/image_3.png" alt="image_3">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/transport_car7/result_0.png" alt="result_0">
+                <img src="supplementary/results/transport_car7/result_1.png" alt="result_1">
+                <img src="supplementary/results/transport_car7/result_2.png" alt="result_2">
+                <img src="supplementary/results/transport_car7/result_3.png" alt="result_3">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Space capsule"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"space"</i>
+                </h2>
+            </div>
+
+        </div>
+
+        <!-- Block of green room -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row-by-width">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/results/green_room/image_0.png" alt="image_0">
+                <img src="supplementary/results/green_room/image_1.png" alt="image_1">
+                <img src="supplementary/results/green_room/image_2.png" alt="image_2">
+            </div>
+
+
+            <div class="row images-row-by-width">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/green_room/result_0.png" alt="result_0">
+                <img src="supplementary/results/green_room/result_1.png" alt="result_1">
+                <img src="supplementary/results/green_room/result_2.png" alt="result_2">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Loft room"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"Loft"</i>
+                </h2>
+            </div>
+
+        </div>
+
+        <!-- Block of scene_waterfall_crop_sunset -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row-by-width">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/results/scene_waterfall_crop_sunset/image_0.png" alt="image_0">
+                <img src="supplementary/results/scene_waterfall_crop_sunset/image_1.png" alt="image_1">
+                <img src="supplementary/results/scene_waterfall_crop_sunset/image_2.png" alt="image_2">
+                <img src="supplementary/results/scene_waterfall_crop_sunset/image_3.png" alt="image_3">
+                <img src="supplementary/results/scene_waterfall_crop_sunset/image_4.png" alt="image_4">
+            </div>
+
+
+            <div class="row images-row-by-width">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/scene_waterfall_crop_sunset/result_0.png" alt="result_0">
+                <img src="supplementary/results/scene_waterfall_crop_sunset/result_1.png" alt="result_1">
+                <img src="supplementary/results/scene_waterfall_crop_sunset/result_2.png" alt="result_2">
+                <img src="supplementary/results/scene_waterfall_crop_sunset/result_3.png" alt="result_3">
+                <img src="supplementary/results/scene_waterfall_crop_sunset/result_4.png" alt="result_4">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Magical waterfall at sunset"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"sunset"</i>
+                </h2>
+            </div>
+
+        </div>
+
+        <!-- Block of colorful_sneaker_winter -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/results/colorful_sneaker_winter/image_0.png" alt="image_0">
+                <img src="supplementary/results/colorful_sneaker_winter/image_1.png" alt="image_1">
+                <img src="supplementary/results/colorful_sneaker_winter/image_2.png" alt="image_2">
+                <img src="supplementary/results/colorful_sneaker_winter/image_3.png" alt="image_3">
+                <img src="supplementary/results/colorful_sneaker_winter/image_4.png" alt="image_4">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/colorful_sneaker_winter/result_0.png" alt="result_0">
+                <img src="supplementary/results/colorful_sneaker_winter/result_1.png" alt="result_1">
+                <img src="supplementary/results/colorful_sneaker_winter/result_2.png" alt="result_2">
+                <img src="supplementary/results/colorful_sneaker_winter/result_3.png" alt="result_3">
+                <img src="supplementary/results/colorful_sneaker_winter/result_4.png" alt="result_4">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"warm woolen slipper"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"winter"</i>
+                </h2>
+            </div>
+
+        </div>
+
+
+        <!-- Block of backpack_jungle -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/results/backpack_jungle/image_0.png" alt="image_0">
+                <img src="supplementary/results/backpack_jungle/image_1.png" alt="image_1">
+                <img src="supplementary/results/backpack_jungle/image_2.png" alt="image_2">
+                <img src="supplementary/results/backpack_jungle/image_3.png" alt="image_3">
+                <img src="supplementary/results/backpack_jungle/image_4.png" alt="image_4">
+                <img src="supplementary/results/backpack_jungle/image_5.png" alt="image_5">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/backpack_jungle/result_0.png" alt="result_0">
+                <img src="supplementary/results/backpack_jungle/result_1.png" alt="result_1">
+                <img src="supplementary/results/backpack_jungle/result_2.png" alt="result_2">
+                <img src="supplementary/results/backpack_jungle/result_3.png" alt="result_3">
+                <img src="supplementary/results/backpack_jungle/result_4.png" alt="result_4">
+                <img src="supplementary/results/backpack_jungle/result_5.png" alt="result_5">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Indiana Jones-themed satchel"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"jungle"</i>
+                </h2>
+            </div>
+
+        </div>
+
+        <!-- Block of actionfigure_1_Matrix-movie -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/results/actionfigure_1_Matrix-movie/image_0.png" alt="image_0">
+                <img src="supplementary/results/actionfigure_1_Matrix-movie/image_1.png" alt="image_1">
+                <img src="supplementary/results/actionfigure_1_Matrix-movie/image_2.png" alt="image_2">
+                <img src="supplementary/results/actionfigure_1_Matrix-movie/image_3.png" alt="image_3">
+                <img src="supplementary/results/actionfigure_1_Matrix-movie/image_4.png" alt="image_4">
+                <img src="supplementary/results/actionfigure_1_Matrix-movie/image_5.png" alt="image_5">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/actionfigure_1_Matrix-movie/result_0.png" alt="result_0">
+                <img src="supplementary/results/actionfigure_1_Matrix-movie/result_1.png" alt="result_1">
+                <img src="supplementary/results/actionfigure_1_Matrix-movie/result_2.png" alt="result_2">
+                <img src="supplementary/results/actionfigure_1_Matrix-movie/result_3.png" alt="result_3">
+                <img src="supplementary/results/actionfigure_1_Matrix-movie/result_4.png" alt="result_4">
+                <img src="supplementary/results/actionfigure_1_Matrix-movie/result_5.png" alt="result_5">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Figurine of a Matrix character"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"Matrix movie"</i>
+                </h2>
+            </div>
+
+        </div>
+
+        <!-- Block of plushie_bunny_crop_Alice-in-Wonderland -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/results/plushie_bunny_crop_Alice-in-Wonderland/image_0.png" alt="image_0">
+                <img src="supplementary/results/plushie_bunny_crop_Alice-in-Wonderland/image_1.png" alt="image_1">
+                <img src="supplementary/results/plushie_bunny_crop_Alice-in-Wonderland/image_2.png" alt="image_2">
+                <img src="supplementary/results/plushie_bunny_crop_Alice-in-Wonderland/image_3.png" alt="image_3">
+                <img src="supplementary/results/plushie_bunny_crop_Alice-in-Wonderland/image_4.png" alt="image_4">
+                <img src="supplementary/results/plushie_bunny_crop_Alice-in-Wonderland/image_5.png" alt="image_5">
+                <img src="supplementary/results/plushie_bunny_crop_Alice-in-Wonderland/image_6.png" alt="image_6">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/plushie_bunny_crop_Alice-in-Wonderland/result_0.png" alt="result_0">
+                <img src="supplementary/results/plushie_bunny_crop_Alice-in-Wonderland/result_1.png" alt="result_1">
+                <img src="supplementary/results/plushie_bunny_crop_Alice-in-Wonderland/result_2.png" alt="result_2">
+                <img src="supplementary/results/plushie_bunny_crop_Alice-in-Wonderland/result_3.png" alt="result_3">
+                <img src="supplementary/results/plushie_bunny_crop_Alice-in-Wonderland/result_4.png" alt="result_4">
+                <img src="supplementary/results/plushie_bunny_crop_Alice-in-Wonderland/result_5.png" alt="result_5">
+                <img src="supplementary/results/plushie_bunny_crop_Alice-in-Wonderland/result_6.png" alt="result_6">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Rabbit from Alice in Wonderland"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"Alice in Wonderland"</i>
+                </h2>
+            </div>
+
+        </div>
+
+        <!-- Block of bear_plushie_gothic-horror -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/results/bear_plushie_gothic-horror/image_0.png" alt="image_0">
+                <img src="supplementary/results/bear_plushie_gothic-horror/image_1.png" alt="image_1">
+                <img src="supplementary/results/bear_plushie_gothic-horror/image_2.png" alt="image_2">
+                <img src="supplementary/results/bear_plushie_gothic-horror/image_3.png" alt="image_3">
+                <img src="supplementary/results/bear_plushie_gothic-horror/image_4.png" alt="image_4">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/bear_plushie_jelly/result_0.png" alt="result_0">
+                <img src="supplementary/results/bear_plushie_jelly/result_1.png" alt="result_1">
+                <img src="supplementary/results/bear_plushie_jelly/result_2.png" alt="result_2">
+                <img src="supplementary/results/bear_plushie_jelly/result_3.png" alt="result_3">
+                <img src="supplementary/results/bear_plushie_jelly/result_4.png" alt="result_3">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Gummy bear with 'Cheer Up' text"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"jelly world"</i>
+                </h2>
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/bear_plushie_gothic-horror/result_0.png" alt="result_0">
+                <img src="supplementary/results/bear_plushie_gothic-horror/result_1.png" alt="result_1">
+                <img src="supplementary/results/bear_plushie_gothic-horror/result_2.png" alt="result_2">
+                <img src="supplementary/results/bear_plushie_gothic-horror/result_3.png" alt="result_3">
+                <img src="supplementary/results/bear_plushie_gothic-horror/result_4.png" alt="result_4">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Horror teddy bear with 'Eternal Rest' text"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"gothic horror"</i>
+                </h2>
+            </div>
+
+        </div>
+
+        <!-- Block of dog_winter -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/results/dog_winter/image_0.png" alt="image_0">
+                <img src="supplementary/results/dog_winter/image_1.png" alt="image_1">
+                <img src="supplementary/results/dog_winter/image_2.png" alt="image_2">
+                <img src="supplementary/results/dog_winter/image_3.png" alt="image_3">
+                <img src="supplementary/results/dog_winter/image_4.png" alt="image_4">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/dog_winter/result_0.png" alt="result_0">
+                <img src="supplementary/results/dog_winter/result_1.png" alt="result_1">
+                <img src="supplementary/results/dog_winter/result_2.png" alt="result_2">
+                <img src="supplementary/results/dog_winter/result_3.png" alt="result_3">
+                <img src="supplementary/results/dog_winter/result_4.png" alt="result_4">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Two-colored metal statue"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"winter"</i>
+                </h2>
+            </div>
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/dog_night/result_0.png" alt="result_0">
+                <img src="supplementary/results/dog_night/result_1.png" alt="result_1">
+                <img src="supplementary/results/dog_night/result_2.png" alt="result_2">
+                <img src="supplementary/results/dog_night/result_3.png" alt="result_3">
+                <img src="supplementary/results/dog_night/result_4.png" alt="result_4">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Horror-style animal"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"night"</i>
+                </h2>
+            </div>
+
+        </div>
+
+        <!-- Block of cat_winter_p2 -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/results/cat_winter_p2/image_0.png" alt="image_0">
+                <img src="supplementary/results/cat_winter_p2/image_1.png" alt="image_1">
+                <img src="supplementary/results/cat_winter_p2/image_2.png" alt="image_2">
+                <img src="supplementary/results/cat_winter_p2/image_3.png" alt="image_3">
+                <img src="supplementary/results/cat_winter_p2/image_4.png" alt="image_4">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/cat_winter_p2/result_0.png" alt="result_0">
+                <img src="supplementary/results/cat_winter_p2/result_1.png" alt="result_1">
+                <img src="supplementary/results/cat_winter_p2/result_2.png" alt="result_2">
+                <img src="supplementary/results/cat_winter_p2/result_3.png" alt="result_3">
+                <img src="supplementary/results/cat_winter_p2/result_4.png" alt="result_4">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Cat robot"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"winter"</i>
+                </h2>
+            </div>
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/cat_winter_p1/result_0.png" alt="result_0">
+                <img src="supplementary/results/cat_winter_p1/result_1.png" alt="result_1">
+                <img src="supplementary/results/cat_winter_p1/result_2.png" alt="result_2">
+                <img src="supplementary/results/cat_winter_p1/result_3.png" alt="result_3">
+                <img src="supplementary/results/cat_winter_p1/result_4.png" alt="result_4">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"An animal knitted from a two-colored yarn"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"winter"</i>
+                </h2>
+            </div>
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/results/cat_winter_p3/result_0.png" alt="result_0">
+                <img src="supplementary/results/cat_winter_p3/result_1.png" alt="result_1">
+                <img src="supplementary/results/cat_winter_p3/result_2.png" alt="result_2">
+                <img src="supplementary/results/cat_winter_p3/result_3.png" alt="result_3">
+                <img src="supplementary/results/cat_winter_p3/result_4.png" alt="result_4">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Wooden cat statue"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"winter"</i>
+                </h2>
+            </div>
+
+        </div>
+
+
+    </div>
+</section>
+
+<section id="storyboards" class="section hero is-light">
+    <!-- Title + description -->
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-full">
+                <h2 class="title is-3">Storyboards</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        We provide the complete image sets used in <strong>Fig.</strong> 10a, along with additional
+                        results.<br>
+                        Match-and-Fuse generalizes to sketched inputs, enabling controlled storyboard generation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full-width image block -->
+    <div class="container is-fluid">
+
+        <!-- Block of guy -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/storyboards/guy/image_0.png" alt="image_0">
+                <img src="supplementary/storyboards/guy/image_1.png" alt="image_1">
+                <img src="supplementary/storyboards/guy/image_2.png" alt="image_2">
+                <img src="supplementary/storyboards/guy/image_3.png" alt="image_3">
+                <img src="supplementary/storyboards/guy/image_4.png" alt="image_4">
+                <img src="supplementary/storyboards/guy/image_5.png" alt="image_5">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/storyboards/guy/result_0.png" alt="result_0">
+                <img src="supplementary/storyboards/guy/result_1.png" alt="result_1">
+                <img src="supplementary/storyboards/guy/result_2.png" alt="result_2">
+                <img src="supplementary/storyboards/guy/result_3.png" alt="result_3">
+                <img src="supplementary/storyboards/guy/result_4.png" alt="result_4">
+                <img src="supplementary/storyboards/guy/result_5.png" alt="result_5">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"A young man"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"simple life"</i>
+                </h2>
+            </div>
+
+        </div>
+
+        <!-- Block of octopus -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row-by-width">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/storyboards/octopus/image_0.png" alt="image_0">
+                <img src="supplementary/storyboards/octopus/image_1.png" alt="image_1">
+                <img src="supplementary/storyboards/octopus/image_2.png" alt="image_2">
+                <img src="supplementary/storyboards/octopus/image_3.png" alt="image_3">
+                <img src="supplementary/storyboards/octopus/image_4.png" alt="image_4">
+                <img src="supplementary/storyboards/octopus/image_5.png" alt="image_5">
+            </div>
+
+
+            <div class="row images-row-by-width">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/storyboards/octopus/result_0.png" alt="result_0">
+                <img src="supplementary/storyboards/octopus/result_1.png" alt="result_1">
+                <img src="supplementary/storyboards/octopus/result_2.png" alt="result_2">
+                <img src="supplementary/storyboards/octopus/result_3.png" alt="result_3">
+                <img src="supplementary/storyboards/octopus/result_4.png" alt="result_4">
+                <img src="supplementary/storyboards/octopus/result_5.png" alt="result_5">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"A pink octopus with yellow spots"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"underwater"</i>
+                </h2>
+            </div>
+
+        </div>
+
+        <!-- Block of shoes6 -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row-by-width">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/storyboards/shoes6/image_0.png" alt="image_0">
+                <img src="supplementary/storyboards/shoes6/image_1.png" alt="image_1">
+                <img src="supplementary/storyboards/shoes6/image_2.png" alt="image_2">
+                <img src="supplementary/storyboards/shoes6/image_3.png" alt="image_3">
+                <img src="supplementary/storyboards/shoes6/image_4.png" alt="image_4">
+                <img src="supplementary/storyboards/shoes6/image_5.png" alt="image_5">
+            </div>
+
+
+            <div class="row images-row-by-width">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/storyboards/shoes6/result_0.png" alt="result_0">
+                <img src="supplementary/storyboards/shoes6/result_1.png" alt="result_1">
+                <img src="supplementary/storyboards/shoes6/result_2.png" alt="result_2">
+                <img src="supplementary/storyboards/shoes6/result_3.png" alt="result_3">
+                <img src="supplementary/storyboards/shoes6/result_4.png" alt="result_4">
+                <img src="supplementary/storyboards/shoes6/result_5.png" alt="result_5">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Vibrant sneakers"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"gloomy day"</i>
+                </h2>
+            </div>
+
+        </div>
+
+        <!-- Block of dress -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row-by-width">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/storyboards/dress/image_0.png" alt="image_0">
+                <img src="supplementary/storyboards/dress/image_1.png" alt="image_1">
+                <img src="supplementary/storyboards/dress/image_2.png" alt="image_2">
+                <img src="supplementary/storyboards/dress/image_3.png" alt="image_3">
+                <img src="supplementary/storyboards/dress/image_4.png" alt="image_4">
+                <img src="supplementary/storyboards/dress/image_5.png" alt="image_5">
+            </div>
+
+            <div class="row images-row-by-width">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/storyboards/dress/result_0.png" alt="result_0">
+                <img src="supplementary/storyboards/dress/result_1.png" alt="result_1">
+                <img src="supplementary/storyboards/dress/result_2.png" alt="result_2">
+                <img src="supplementary/storyboards/dress/result_3.png" alt="result_3">
+                <img src="supplementary/storyboards/dress/result_4.png" alt="result_4">
+                <img src="supplementary/storyboards/dress/result_5.png" alt="result_5">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Striped dress"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"simple"</i>
+                </h2>
+            </div>
+
+        </div>
+
+        <!-- Block of moments -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/storyboards/moments/image_0.png" alt="image_0">
+                <img src="supplementary/storyboards/moments/image_1.png" alt="image_1">
+                <img src="supplementary/storyboards/moments/image_2.png" alt="image_2">
+                <img src="supplementary/storyboards/moments/image_3.png" alt="image_3">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/storyboards/moments/result_0.png" alt="result_0">
+                <img src="supplementary/storyboards/moments/result_1.png" alt="result_1">
+                <img src="supplementary/storyboards/moments/result_2.png" alt="result_2">
+                <img src="supplementary/storyboards/moments/result_3.png" alt="result_3">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"A couple's life"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"sunny day"</i>
+                </h2>
+            </div>
+
+        </div>
+
+
+    </div>
+</section>
+
+<section id="localized" class="section hero">
+    <!-- Title + description -->
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-full">
+                <h2 class="title is-3">Localized Editing</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        We provide the complete image sets used in <strong>Fig.</strong> 10b, along with additional
+                        results.<br>
+                        Match-and-Fused enables consistent, localized editing without \(\mathcal{P}^{theme}\), achieved
+                        through integration with FlowEdit <a href="#References">[1]</a> (see Ap. A.1).
+                        All results are produced using default integration parameters.
+                        However, due to the preservation–editability trade-off inherited from FlowEdit, some cases
+                        (e.g., the sheep example)
+                        may exhibit slight structural deviations and benefit from mild per-edit hyperparameter tuning.
+                        Automating this selection is left for future work.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full-width image block -->
+    <div class="container is-fluid">
+
+        <!-- Block of things_keychain1 -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/localized/things_keychain1/image_0.png" alt="image_0">
+                <img src="supplementary/localized/things_keychain1/image_1.png" alt="image_1">
+                <img src="supplementary/localized/things_keychain1/image_2.png" alt="image_2">
+                <img src="supplementary/localized/things_keychain1/image_3.png" alt="image_3">
+                <img src="supplementary/localized/things_keychain1/image_4.png" alt="image_4">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/localized/things_keychain1/result_0.png" alt="result_0">
+                <img src="supplementary/localized/things_keychain1/result_1.png" alt="result_1">
+                <img src="supplementary/localized/things_keychain1/result_2.png" alt="result_2">
+                <img src="supplementary/localized/things_keychain1/result_3.png" alt="result_3">
+                <img src="supplementary/localized/things_keychain1/result_4.png" alt="result_4">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"A princess keychain"</i>
+                </h2>
+            </div>
+
+        </div>
+
+
+        <!-- Block of things_book2_inter-galactic -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/localized/things_book2_inter-galactic/image_0.png" alt="image_0">
+                <img src="supplementary/localized/things_book2_inter-galactic/image_1.png" alt="image_1">
+                <img src="supplementary/localized/things_book2_inter-galactic/image_2.png" alt="image_2">
+                <img src="supplementary/localized/things_book2_inter-galactic/image_3.png" alt="image_3">
+                <img src="supplementary/localized/things_book2_inter-galactic/image_4.png" alt="image_4">
+                <img src="supplementary/localized/things_book2_inter-galactic/image_5.png" alt="image_5">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/localized/things_book2_inter-galactic/result_0.png" alt="result_0">
+                <img src="supplementary/localized/things_book2_inter-galactic/result_1.png" alt="result_1">
+                <img src="supplementary/localized/things_book2_inter-galactic/result_2.png" alt="result_2">
+                <img src="supplementary/localized/things_book2_inter-galactic/result_3.png" alt="result_3">
+                <img src="supplementary/localized/things_book2_inter-galactic/result_4.png" alt="result_4">
+                <img src="supplementary/localized/things_book2_inter-galactic/result_5.png" alt="result_5">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"A book titled 'Timetravel Manual'"</i>
+                </h2>
+            </div>
+
+        </div>
+
+
+        <!-- Block of pet_dog1 -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/localized/pet_dog1/image_0.png" alt="image_0">
+                <img src="supplementary/localized/pet_dog1/image_1.png" alt="image_1">
+                <img src="supplementary/localized/pet_dog1/image_2.png" alt="image_2">
+                <img src="supplementary/localized/pet_dog1/image_3.png" alt="image_3">
+                <img src="supplementary/localized/pet_dog1/image_4.png" alt="image_4">
+                <img src="supplementary/localized/pet_dog1/image_5.png" alt="image_5">
+                <img src="supplementary/localized/pet_dog1/image_6.png" alt="image_6">
+                <img src="supplementary/localized/pet_dog1/image_7.png" alt="image_7">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/localized/pet_dog1/result_0.png" alt="result_0">
+                <img src="supplementary/localized/pet_dog1/result_1.png" alt="result_1">
+                <img src="supplementary/localized/pet_dog1/result_2.png" alt="result_2">
+                <img src="supplementary/localized/pet_dog1/result_3.png" alt="result_3">
+                <img src="supplementary/localized/pet_dog1/result_4.png" alt="result_4">
+                <img src="supplementary/localized/pet_dog1/result_5.png" alt="result_5">
+                <img src="supplementary/localized/pet_dog1/result_6.png" alt="result_6">
+                <img src="supplementary/localized/pet_dog1/result_7.png" alt="result_7">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"A sheep in a red t-shirt"</i>
+                </h2>
+            </div>
+
+        </div>
+
+
+        <!-- Block of dog7_winter -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/localized/dog7_winter/image_0.png" alt="image_0">
+                <img src="supplementary/localized/dog7_winter/image_1.png" alt="image_1">
+                <img src="supplementary/localized/dog7_winter/image_2.png" alt="image_2">
+                <img src="supplementary/localized/dog7_winter/image_3.png" alt="image_3">
+                <img src="supplementary/localized/dog7_winter/image_4.png" alt="image_4">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/localized/dog7_winter/result_0.png" alt="result_0">
+                <img src="supplementary/localized/dog7_winter/result_1.png" alt="result_1">
+                <img src="supplementary/localized/dog7_winter/result_2.png" alt="result_2">
+                <img src="supplementary/localized/dog7_winter/result_3.png" alt="result_3">
+                <img src="supplementary/localized/dog7_winter/result_4.png" alt="result_4">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Extraterrestrial alien pet"</i>
+                </h2>
+            </div>
+
+        </div>
+
+
+        <!-- Block of toy_bear -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/localized/toy_bear/image_0.png" alt="image_0">
+                <img src="supplementary/localized/toy_bear/image_1.png" alt="image_1">
+                <img src="supplementary/localized/toy_bear/image_2.png" alt="image_2">
+                <img src="supplementary/localized/toy_bear/image_3.png" alt="image_3">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/localized/toy_bear/result_0.png" alt="result_0">
+                <img src="supplementary/localized/toy_bear/result_1.png" alt="result_1">
+                <img src="supplementary/localized/toy_bear/result_2.png" alt="result_2">
+                <img src="supplementary/localized/toy_bear/result_3.png" alt="result_3">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"A statue of panda in clothes"</i>
+                </h2>
+            </div>
+
+        </div>
+
+
+        <!-- Block of transport_car10 -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/localized/transport_car10/image_0.png" alt="image_0">
+                <img src="supplementary/localized/transport_car10/image_1.png" alt="image_1">
+                <img src="supplementary/localized/transport_car10/image_2.png" alt="image_2">
+                <img src="supplementary/localized/transport_car10/image_3.png" alt="image_3">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/localized/transport_car10/result_0.png" alt="result_0">
+                <img src="supplementary/localized/transport_car10/result_1.png" alt="result_1">
+                <img src="supplementary/localized/transport_car10/result_2.png" alt="result_2">
+                <img src="supplementary/localized/transport_car10/result_3.png" alt="result_3">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"A hippy car"</i>
+                </h2>
+            </div>
+
+        </div>
+
+        <!-- Block of plushie_2_Hawaii -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/localized/plushie_2_Hawaii/image_0.png" alt="image_0">
+                <img src="supplementary/localized/plushie_2_Hawaii/image_1.png" alt="image_1">
+                <img src="supplementary/localized/plushie_2_Hawaii/image_2.png" alt="image_2">
+                <img src="supplementary/localized/plushie_2_Hawaii/image_3.png" alt="image_3">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/localized/plushie_2_Hawaii/result_0.png" alt="result_0">
+                <img src="supplementary/localized/plushie_2_Hawaii/result_1.png" alt="result_1">
+                <img src="supplementary/localized/plushie_2_Hawaii/result_2.png" alt="result_2">
+                <img src="supplementary/localized/plushie_2_Hawaii/result_3.png" alt="result_3">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Plush Stitch"</i>
+                </h2>
+            </div>
+
+        </div>
+
+
+        <!-- Block of transport_bike_crop_winter -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/localized/transport_bike_crop_winter/image_0.png" alt="image_0">
+                <img src="supplementary/localized/transport_bike_crop_winter/image_1.png" alt="image_1">
+                <img src="supplementary/localized/transport_bike_crop_winter/image_2.png" alt="image_2">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/localized/transport_bike_crop_winter/result_0.png" alt="result_0">
+                <img src="supplementary/localized/transport_bike_crop_winter/result_1.png" alt="result_1">
+                <img src="supplementary/localized/transport_bike_crop_winter/result_2.png" alt="result_2">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Disney-styled bike"</i>
+                </h2>
+            </div>
+
+        </div>
+
+
+        <!-- Block of pet_cat6_winter -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/localized/pet_cat6_winter/image_0.png" alt="image_0">
+                <img src="supplementary/localized/pet_cat6_winter/image_1.png" alt="image_1">
+                <img src="supplementary/localized/pet_cat6_winter/image_2.png" alt="image_2">
+            </div>
+
+
+            <div class="row images-row">
+                <div class="vertical-label">Generations</div>
+                <img src="supplementary/localized/pet_cat6_winter/result_0.png" alt="result_0">
+                <img src="supplementary/localized/pet_cat6_winter/result_1.png" alt="result_1">
+                <img src="supplementary/localized/pet_cat6_winter/result_2.png" alt="result_2">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"A cat-shaped candy"</i>
+                </h2>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="comparisons" class="section hero is-light">
+    <!-- Title + description -->
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-full">
+                <h2 class="title is-3">Comparisons</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        We provide the complete image sets used in <strong>Fig.</strong> 9, along with additional
+                        comparisons.
+                    </p>
+
+                    <p>
+                        <strong>FLUX</strong> <a href="#References">[2]</a> produces inconsistencies in both coarse and
+                        fine details.<br>
+                        <strong>FLUX Kontext</strong> <a href="#References">[3]</a> has low prompt adherence (e.g., a
+                        dog and cat edits remain animal-like in some images), and often distorts object structure (e.g.
+                        vase, dog).<br>
+                        <strong>IC-LoRA</strong> <a href="#References">[4]</a> achieves partial consistency, with
+                        coherence often restricted to subsets (vase, dog, cat). Its realism and fidelity are notably
+                        lower than FLUX.<br>
+                        <strong>Edicho</strong> <a href="#References">[5]</a> performs best among baselines but still
+                        shows noticeable inconsistencies (dog), as its one-to-all warping enforces consistency only with
+                        the first image, making the choice of an anchor ambiguous and causing diverging appearances
+                        across views.
+                        These result were provided by the authors for qualitative comparison.<br>
+                        <strong>Edicho-Inpaint*</strong> <a href="#References">[5]</a> uses the same underlying
+                        approach, but generates content only within the shared-region masks, omitting
+                        \(\mathcal{P}^{theme}\).
+                        Since we only evaluate the shared regions, this setup is comparable and is used in the reported
+                        numeric evaluation, as the code for ControlNet pipeline was unavailable at publication time.
+                        The additional results reveal that Edicho’s attention warping mechanism lacks robustness under
+                        viewpoint variation, producing severe artifacts.
+                        <br>
+                        In contrast, <strong>Match-and-Fuse (Ours)</strong> maintains high image quality while
+                        substantially improving structural and fine-grained consistency.
+
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full-width image block -->
+    <div class="container is-fluid">
+
+        <!-- Toggle controls bar -->
+        <div class="toggle-bar" role="group" aria-label="Row visibility">
+            <div class="toggle-group">
+
+                <label class="switch" title="Show/Hide FLUX.1-dev">
+                    <input type="checkbox" data-row="flux" checked aria-controls="row-flux"/>
+                    <span class="track"><span class="knob"></span></span>
+                    <span class="label">FLUX.1-dev</span>
+                </label>
+
+                <label class="switch" title="Show/Hide FLUX.1 Kontext">
+                    <input type="checkbox" data-row="kontext" checked aria-controls="row-kontext"/>
+                    <span class="track"><span class="knob"></span></span>
+                    <span class="label">FLUX.1 Kontext</span>
+                </label>
+
+                <label class="switch" title="Show/Hide IC-LoRA">
+                    <input type="checkbox" data-row="iclora" checked aria-controls="row-iclora"/>
+                    <span class="track"><span class="knob"></span></span>
+                    <span class="label">IC-LoRA</span>
+                </label>
+
+                <label class="switch" title="Show/Hide Edicho-Inpaint*">
+                    <input type="checkbox" data-row="edicho_inpaint" checked aria-controls="row-edicho_inpaint"/>
+                    <span class="track"><span class="knob"></span></span>
+                    <span class="label">Edicho-Inpaint*</span>
+                </label>
+
+                <label class="switch" title="Show/Hide Edicho">
+                    <input type="checkbox" data-row="edicho" checked aria-controls="row-edicho"/>
+                    <span class="track"><span class="knob"></span></span>
+                    <span class="label">Edicho</span>
+                </label>
+
+            </div>
+        </div>
+
+        <!-- Block of dog2_winter -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/comparisons/dog2_winter/src/image_0.png" alt="image_0">
+                <img src="supplementary/comparisons/dog2_winter/src/image_1.png" alt="image_1">
+                <img src="supplementary/comparisons/dog2_winter/src/image_2.png" alt="image_2">
+                <img src="supplementary/comparisons/dog2_winter/src/image_3.png" alt="image_3">
+                <img src="supplementary/comparisons/dog2_winter/src/image_4.png" alt="image_4">
+                <img src="supplementary/comparisons/dog2_winter/src/image_5.png" alt="image_5">
+            </div>
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"A dog toy with two-colored yarn"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"winter"</i>
+                </h2>
+            </div>
+
+            <div class="row images-row" data-row="flux">
+                <div class="vertical-label">FLUX.1-dev</div>
+                <img src="supplementary/comparisons/dog2_winter/flux/result_0.png" alt="result_0">
+                <img src="supplementary/comparisons/dog2_winter/flux/result_1.png" alt="result_1">
+                <img src="supplementary/comparisons/dog2_winter/flux/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/dog2_winter/flux/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/dog2_winter/flux/result_4.png" alt="result_4">
+                <img src="supplementary/comparisons/dog2_winter/flux/result_5.png" alt="result_5">
+            </div>
+
+            <div class="row images-row" data-row="kontext">
+                <div class="vertical-label">FLUX.1 Kontext</div>
+                <img src="supplementary/comparisons/dog2_winter/kontext/result_0.png" alt="result_0">
+                <img src="supplementary/comparisons/dog2_winter/kontext/result_1.png" alt="result_1">
+                <img src="supplementary/comparisons/dog2_winter/kontext/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/dog2_winter/kontext/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/dog2_winter/kontext/result_4.png" alt="result_4">
+                <img src="supplementary/comparisons/dog2_winter/kontext/result_5.png" alt="result_5">
+            </div>
+
+            <div class="row images-row" data-row="iclora">
+                <div class="vertical-label">IC-LoRA</div>
+                <img src="supplementary/comparisons/dog2_winter/iclora/result_0.png" alt="result_0">
+                <img src="supplementary/comparisons/dog2_winter/iclora/result_1.png" alt="result_1">
+                <img src="supplementary/comparisons/dog2_winter/iclora/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/dog2_winter/iclora/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/dog2_winter/iclora/result_4.png" alt="result_4">
+                <img src="supplementary/comparisons/dog2_winter/iclora/result_5.png" alt="result_5">
+            </div>
+
+            <div class="row images-row" data-row="edicho_inpaint">
+                <div class="vertical-label">Edicho-Inpaint*</div>
+                <img src="supplementary/comparisons/dog2_winter/edicho_inpaint/result_0.png" alt="result_0">
+                <img src="supplementary/comparisons/dog2_winter/edicho_inpaint/result_1.png" alt="result_1">
+                <img src="supplementary/comparisons/dog2_winter/edicho_inpaint/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/dog2_winter/edicho_inpaint/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/dog2_winter/edicho_inpaint/result_4.png" alt="result_4">
+                <img src="supplementary/comparisons/dog2_winter/edicho_inpaint/result_5.png" alt="result_5">
+            </div>
+
+            <div class="row images-row" data-row="edicho">
+                <div class="vertical-label">Edicho</div>
+                <img src="supplementary/comparisons/dog2_winter/edicho/result_0.jpg" alt="result_0">
+                <img src="supplementary/comparisons/dog2_winter/edicho/result_1.jpg" alt="result_1">
+                <img src="supplementary/comparisons/dog2_winter/edicho/result_2.jpg" alt="result_2">
+                <img src="supplementary/comparisons/dog2_winter/edicho/result_3.jpg" alt="result_3">
+                <img src="supplementary/comparisons/dog2_winter/edicho/result_4.jpg" alt="result_4">
+                <img src="supplementary/comparisons/dog2_winter/edicho/result_5.jpg" alt="result_5">
+            </div>
+
+            <div class="row images-row" data-row="ours">
+                <div class="vertical-label">Ours</div>
+                <img src="supplementary/comparisons/dog2_winter/ours/result_0.png" alt="result_0">
+                <img src="supplementary/comparisons/dog2_winter/ours/result_1.png" alt="result_1">
+                <img src="supplementary/comparisons/dog2_winter/ours/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/dog2_winter/ours/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/dog2_winter/ours/result_4.png" alt="result_4">
+                <img src="supplementary/comparisons/dog2_winter/ours/result_5.png" alt="result_5">
+            </div>
+
+
+        </div>
+
+        <!-- Block of pet_cat1_autumn -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/comparisons/pet_cat1_autumn/src/image_0.png" alt="image_0">
+                <img src="supplementary/comparisons/pet_cat1_autumn/src/image_1.png" alt="image_1">
+                <img src="supplementary/comparisons/pet_cat1_autumn/src/image_2.png" alt="image_2">
+                <img src="supplementary/comparisons/pet_cat1_autumn/src/image_3.png" alt="image_3">
+                <img src="supplementary/comparisons/pet_cat1_autumn/src/image_4.png" alt="image_4">
+            </div>
+
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"A marble cat statue"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"autumn"</i>
+                </h2>
+            </div>
+
+            <div class="row images-row" data-row="flux">
+                <div class="vertical-label">FLUX.1-dev</div>
+                <img src="supplementary/comparisons/pet_cat1_autumn/flux/result_0.png" alt="result_0">
+                <img src="supplementary/comparisons/pet_cat1_autumn/flux/result_1.png" alt="result_1">
+                <img src="supplementary/comparisons/pet_cat1_autumn/flux/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/pet_cat1_autumn/flux/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/pet_cat1_autumn/flux/result_4.png" alt="result_4">
+            </div>
+
+            <div class="row images-row" data-row="kontext">
+                <div class="vertical-label">FLUX.1 Kontext</div>
+                <img src="supplementary/comparisons/pet_cat1_autumn/kontext/result_0.png" alt="result_0">
+                <img src="supplementary/comparisons/pet_cat1_autumn/kontext/result_1.png" alt="result_1">
+                <img src="supplementary/comparisons/pet_cat1_autumn/kontext/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/pet_cat1_autumn/kontext/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/pet_cat1_autumn/kontext/result_4.png" alt="result_4">
+            </div>
+
+            <div class="row images-row" data-row="iclora">
+                <div class="vertical-label">IC-LoRA</div>
+                <img src="supplementary/comparisons/pet_cat1_autumn/iclora/result_0.png" alt="result_0">
+                <img src="supplementary/comparisons/pet_cat1_autumn/iclora/result_1.png" alt="result_1">
+                <img src="supplementary/comparisons/pet_cat1_autumn/iclora/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/pet_cat1_autumn/iclora/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/pet_cat1_autumn/iclora/result_4.png" alt="result_4">
+            </div>
+
+            <div class="row images-row" data-row="edicho_inpaint">
+                <div class="vertical-label">Edicho-Inpaint*</div>
+                <img src="supplementary/comparisons/pet_cat1_autumn/edicho_inpaint/result_0.png" alt="result_0">
+                <img src="supplementary/comparisons/pet_cat1_autumn/edicho_inpaint/result_1.png" alt="result_1">
+                <img src="supplementary/comparisons/pet_cat1_autumn/edicho_inpaint/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/pet_cat1_autumn/edicho_inpaint/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/pet_cat1_autumn/edicho_inpaint/result_4.png" alt="result_4">
+            </div>
+
+            <div class="row images-row" data-row="edicho">
+                <div class="vertical-label">Edicho</div>
+                <img src="supplementary/comparisons/pet_cat1_autumn/edicho/result_0.jpg" alt="result_0">
+                <img src="supplementary/comparisons/pet_cat1_autumn/edicho/result_1.jpg" alt="result_1">
+                <img src="supplementary/comparisons/pet_cat1_autumn/edicho/result_2.jpg" alt="result_2">
+                <img src="supplementary/comparisons/pet_cat1_autumn/edicho/result_3.jpg" alt="result_3">
+                <img src="supplementary/comparisons/pet_cat1_autumn/edicho/result_4.jpg" alt="result_4">
+            </div>
+
+            <div class="row images-row" data-row="ours">
+                <div class="vertical-label">Ours</div>
+                <img src="supplementary/comparisons/pet_cat1_autumn/ours/result_0.png" alt="result_0">
+                <img src="supplementary/comparisons/pet_cat1_autumn/ours/result_1.png" alt="result_1">
+                <img src="supplementary/comparisons/pet_cat1_autumn/ours/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/pet_cat1_autumn/ours/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/pet_cat1_autumn/ours/result_4.png" alt="result_4">
+            </div>
+
+        </div>
+
+        <!-- Block of wearable_shoes1_crop_modern -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/src/image_0.png" alt="image_0">
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/src/image_1.png" alt="image_1">
+                <!--          <img src="supplementary/comparisons/wearable_shoes1_crop_modern/src/image_2.png" alt="image_2">-->
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/src/image_3.png" alt="image_3">
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/src/image_4.png" alt="image_4">
+            </div>
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"A plush slipper "</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"modern"</i>
+                </h2>
+            </div>
+
+            <div class="row images-row" data-row="flux">
+                <div class="vertical-label">FLUX.1-dev</div>
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/flux/result_0.png" alt="result_0">
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/flux/result_1.png" alt="result_1">
+                <!--          <img src="supplementary/comparisons/wearable_shoes1_crop_modern/flux/result_2.png" alt="result_2">-->
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/flux/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/flux/result_4.png" alt="result_4">
+            </div>
+
+            <div class="row images-row" data-row="kontext">
+                <div class="vertical-label">FLUX.1 Kontext</div>
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/kontext/result_0.png" alt="result_0">
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/kontext/result_1.png" alt="result_1">
+                <!--          <img src="supplementary/comparisons/wearable_shoes1_crop_modern/kontext/result_2.png" alt="result_2">-->
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/kontext/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/kontext/result_4.png" alt="result_4">
+            </div>
+
+            <div class="row images-row" data-row="iclora">
+                <div class="vertical-label">IC-LoRA</div>
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/iclora/result_0.png" alt="result_0">
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/iclora/result_1.png" alt="result_1">
+                <!--          <img src="supplementary/comparisons/wearable_shoes1_crop_modern/iclora/result_2.png" alt="result_2">-->
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/iclora/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/iclora/result_4.png" alt="result_4">
+            </div>
+
+            <div class="row images-row" data-row="edicho_inpaint">
+                <div class="vertical-label">Edicho-Inpaint*</div>
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/edicho_inpaint/result_0.png"
+                     alt="result_0">
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/edicho_inpaint/result_1.png"
+                     alt="result_1">
+                <!--          <img src="supplementary/comparisons/wearable_shoes1_crop_modern/edicho_inpaint/result_2.png" alt="result_2">-->
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/edicho_inpaint/result_3.png"
+                     alt="result_3">
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/edicho_inpaint/result_4.png"
+                     alt="result_4">
+            </div>
+
+            <div class="row images-row" data-row="edicho">
+                <div class="vertical-label">Edicho</div>
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/edicho/result_0.jpg" alt="result_0">
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/edicho/result_1.jpg" alt="result_1">
+                <!--          <img src="supplementary/comparisons/wearable_shoes1_crop_modern/edicho/result_2.jpg" alt="result_2">-->
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/edicho/result_3.jpg" alt="result_3">
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/edicho/result_4.jpg" alt="result_4">
+            </div>
+
+            <div class="row images-row" data-row="ours">
+                <div class="vertical-label">Ours</div>
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/ours/result_0.png" alt="result_0">
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/ours/result_1.png" alt="result_1">
+                <!--          <img src="supplementary/comparisons/wearable_shoes1_crop_modern/ours/result_2.png" alt="result_2">-->
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/ours/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/ours/result_4.png" alt="result_4">
+            </div>
+
+        </div>
+
+        <!-- Block of vase_rural -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <!--          <img src="supplementary/comparisons/vase_rural/src/image_0.png" alt="image_0">-->
+                <img src="supplementary/comparisons/vase_rural/src/image_1.png" alt="image_1">
+                <img src="supplementary/comparisons/vase_rural/src/image_2.png" alt="image_2">
+                <img src="supplementary/comparisons/vase_rural/src/image_3.png" alt="image_3">
+                <!--          <img src="supplementary/comparisons/vase_rural/src/image_4.png" alt="image_4">-->
+            </div>
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"A cute disney-styled vase"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"rural"</i>
+                </h2>
+            </div>
+
+            <div class="row images-row" data-row="flux">
+                <div class="vertical-label">FLUX.1-dev</div>
+                <!--          <img src="supplementary/comparisons/vase_rural/flux/result_0.png" alt="result_0">-->
+                <img src="supplementary/comparisons/vase_rural/flux/result_1.png" alt="result_1">
+                <img src="supplementary/comparisons/vase_rural/flux/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/vase_rural/flux/result_3.png" alt="result_3">
+                <!--          <img src="supplementary/comparisons/vase_rural/flux/result_4.png" alt="result_4">-->
+            </div>
+
+            <div class="row images-row" data-row="kontext">
+                <div class="vertical-label">FLUX.1 Kontext</div>
+                <!--          <img src="supplementary/comparisons/vase_rural/kontext/result_0.png" alt="result_0">-->
+                <img src="supplementary/comparisons/vase_rural/kontext/result_1.png" alt="result_1">
+                <img src="supplementary/comparisons/vase_rural/kontext/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/vase_rural/kontext/result_3.png" alt="result_3">
+                <!--          <img src="supplementary/comparisons/vase_rural/kontext/result_4.png" alt="result_4">-->
+            </div>
+
+            <div class="row images-row" data-row="iclora">
+                <div class="vertical-label">IC-LoRA</div>
+                <!--          <img src="supplementary/comparisons/vase_rural/iclora/result_0.png" alt="result_0">-->
+                <img src="supplementary/comparisons/vase_rural/iclora/result_1.png" alt="result_1">
+                <img src="supplementary/comparisons/vase_rural/iclora/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/vase_rural/iclora/result_3.png" alt="result_3">
+                <!--          <img src="supplementary/comparisons/vase_rural/iclora/result_4.png" alt="result_4">-->
+            </div>
+
+            <div class="row images-row" data-row="edicho_inpaint">
+                <div class="vertical-label">Edicho-Inpaint*</div>
+                <!--          <img src="supplementary/comparisons/vase_rural/edicho_inpaint/result_0.png" alt="result_0">-->
+                <img src="supplementary/comparisons/vase_rural/edicho_inpaint/result_1.png" alt="result_1">
+                <img src="supplementary/comparisons/vase_rural/edicho_inpaint/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/vase_rural/edicho_inpaint/result_3.png" alt="result_3">
+                <!--          <img src="supplementary/comparisons/vase_rural/edicho_inpaint/result_4.png" alt="result_4">-->
+            </div>
+
+            <div class="row images-row" data-row="edicho">
+                <div class="vertical-label">Edicho</div>
+                <!--          <img src="supplementary/comparisons/vase_rural/edicho/result_0.jpg" alt="result_0">-->
+                <img src="supplementary/comparisons/vase_rural/edicho/result_1.jpg" alt="result_1">
+                <img src="supplementary/comparisons/vase_rural/edicho/result_2.jpg" alt="result_2">
+                <img src="supplementary/comparisons/vase_rural/edicho/result_3.jpg" alt="result_3">
+                <!--          <img src="supplementary/comparisons/vase_rural/edicho/result_4.jpg" alt="result_4">-->
+            </div>
+
+            <div class="row images-row" data-row="ours">
+                <div class="vertical-label">Ours</div>
+                <!--          <img src="supplementary/comparisons/vase_rural/ours/result_0.png" alt="result_0">-->
+                <img src="supplementary/comparisons/vase_rural/ours/result_1.png" alt="result_1">
+                <img src="supplementary/comparisons/vase_rural/ours/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/vase_rural/ours/result_3.png" alt="result_3">
+                <!--          <img src="supplementary/comparisons/vase_rural/ours/result_4.png" alt="result_4">-->
+            </div>
+
+        </div>
+
+        <!-- Block of transport_car2 -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row" data-row="src">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/comparisons/transport_car2/src/image_0.png" alt="image_0">
+                <!--          <img src="supplementary/comparisons/transport_car2/src/image_1.png" alt="image_1">-->
+                <img src="supplementary/comparisons/transport_car2/src/image_2.png" alt="image_2">
+                <img src="supplementary/comparisons/transport_car2/src/image_3.png" alt="image_3">
+                <img src="supplementary/comparisons/transport_car2/src/image_4.png" alt="image_4">
+                <!--          <img src="supplementary/comparisons/transport_car2/src/image_5.png" alt="image_5">-->
+                <img src="supplementary/comparisons/transport_car2/src/image_6.png" alt="image_6">
+                <img src="supplementary/comparisons/transport_car2/src/image_7.png" alt="image_7">
+                <img src="supplementary/comparisons/transport_car2/src/image_8.png" alt="image_8">
+            </div>
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"two-colored vintage car"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"vintage"</i>
+                </h2>
+            </div>
+
+            <div class="row images-row" data-row="flux">
+                <div class="vertical-label">FLUX.1-dev</div>
+                <img src="supplementary/comparisons/transport_car2/flux/result_0.png" alt="result_0">
+                <!--          <img src="supplementary/comparisons/transport_car2/flux/result_1.png" alt="result_1">-->
+                <img src="supplementary/comparisons/transport_car2/flux/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/transport_car2/flux/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/transport_car2/flux/result_4.png" alt="result_4">
+                <!--          <img src="supplementary/comparisons/transport_car2/flux/result_5.png" alt="result_5">-->
+                <img src="supplementary/comparisons/transport_car2/flux/result_6.png" alt="result_6">
+                <img src="supplementary/comparisons/transport_car2/flux/result_7.png" alt="result_7">
+                <img src="supplementary/comparisons/transport_car2/flux/result_8.png" alt="result_8">
+            </div>
+
+            <div class="row images-row" data-row="kontext">
+                <div class="vertical-label">FLUX Kontext</div>
+                <img src="supplementary/comparisons/transport_car2/kontext/result_0.png" alt="result_0">
+                <!--          <img src="supplementary/comparisons/transport_car2/kontext/result_1.png" alt="result_1">-->
+                <img src="supplementary/comparisons/transport_car2/kontext/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/transport_car2/kontext/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/transport_car2/kontext/result_4.png" alt="result_4">
+                <!--          <img src="supplementary/comparisons/transport_car2/kontext/result_5.png" alt="result_5">-->
+                <img src="supplementary/comparisons/transport_car2/kontext/result_6.png" alt="result_6">
+                <img src="supplementary/comparisons/transport_car2/kontext/result_7.png" alt="result_7">
+                <img src="supplementary/comparisons/transport_car2/kontext/result_8.png" alt="result_8">
+            </div>
+
+            <div class="row images-row" data-row="iclora">
+                <div class="vertical-label">IC-LoRA</div>
+                <img src="supplementary/comparisons/transport_car2/iclora/result_0.png" alt="result_0">
+                <!--          <img src="supplementary/comparisons/transport_car2/iclora/result_1.png" alt="result_1">-->
+                <img src="supplementary/comparisons/transport_car2/iclora/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/transport_car2/iclora/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/transport_car2/iclora/result_4.png" alt="result_4">
+                <!--          <img src="supplementary/comparisons/transport_car2/iclora/result_5.png" alt="result_5">-->
+                <img src="supplementary/comparisons/transport_car2/iclora/result_6.png" alt="result_6">
+                <img src="supplementary/comparisons/transport_car2/iclora/result_7.png" alt="result_7">
+                <img src="supplementary/comparisons/transport_car2/iclora/result_8.png" alt="result_8">
+            </div>
+
+            <div class="row images-row" data-row="edicho_inpaint">
+                <div class="vertical-label">Edicho-Inpaint*</div>
+                <img src="supplementary/comparisons/transport_car2/edicho_inpaint/result_0.png" alt="result_0">
+                <!--          <img src="supplementary/comparisons/transport_car2/edicho_inpaint/result_1.png" alt="result_1">-->
+                <img src="supplementary/comparisons/transport_car2/edicho_inpaint/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/transport_car2/edicho_inpaint/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/transport_car2/edicho_inpaint/result_4.png" alt="result_4">
+                <!--          <img src="supplementary/comparisons/transport_car2/edicho_inpaint/result_5.png" alt="result_5">-->
+                <img src="supplementary/comparisons/transport_car2/edicho_inpaint/result_6.png" alt="result_6">
+                <img src="supplementary/comparisons/transport_car2/edicho_inpaint/result_7.png" alt="result_7">
+                <img src="supplementary/comparisons/transport_car2/edicho_inpaint/result_8.png" alt="result_8">
+            </div>
+
+            <div class="row images-row" data-row="ours">
+                <div class="vertical-label">Ours</div>
+                <img src="supplementary/comparisons/transport_car2/ours/result_0.png" alt="result_0">
+                <!--          <img src="supplementary/comparisons/transport_car2/ours/result_1.png" alt="result_1">-->
+                <img src="supplementary/comparisons/transport_car2/ours/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/transport_car2/ours/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/transport_car2/ours/result_4.png" alt="result_4">
+                <!--          <img src="supplementary/comparisons/transport_car2/ours/result_5.png" alt="result_5">-->
+                <img src="supplementary/comparisons/transport_car2/ours/result_6.png" alt="result_6">
+                <img src="supplementary/comparisons/transport_car2/ours/result_7.png" alt="result_7">
+                <img src="supplementary/comparisons/transport_car2/ours/result_8.png" alt="result_8">
+            </div>
+
+        </div>
+
+        <!-- Block of dance_front -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row" data-row="src">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/comparisons/dance_front/src/image_0.png" alt="image_0">
+                <img src="supplementary/comparisons/dance_front/src/image_1.png" alt="image_1">
+                <img src="supplementary/comparisons/dance_front/src/image_2.png" alt="image_2">
+                <img src="supplementary/comparisons/dance_front/src/image_3.png" alt="image_3">
+                <img src="supplementary/comparisons/dance_front/src/image_4.png" alt="image_4">
+            </div>
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"Pixar characters"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"plain background"</i>
+                </h2>
+            </div>
+
+            <div class="row images-row" data-row="flux">
+                <div class="vertical-label">FLUX.1-dev</div>
+                <img src="supplementary/comparisons/dance_front/flux/result_0.png" alt="result_0">
+                <img src="supplementary/comparisons/dance_front/flux/result_1.png" alt="result_1">
+                <img src="supplementary/comparisons/dance_front/flux/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/dance_front/flux/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/dance_front/flux/result_4.png" alt="result_4">
+            </div>
+
+            <div class="row images-row" data-row="kontext">
+                <div class="vertical-label">FLUX.1 Kontext</div>
+                <img src="supplementary/comparisons/dance_front/kontext/result_0.png" alt="result_0">
+                <img src="supplementary/comparisons/dance_front/kontext/result_1.png" alt="result_1">
+                <img src="supplementary/comparisons/dance_front/kontext/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/dance_front/kontext/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/dance_front/kontext/result_4.png" alt="result_4">
+            </div>
+
+            <div class="row images-row" data-row="iclora">
+                <div class="vertical-label">IC-LoRA</div>
+                <img src="supplementary/comparisons/dance_front/iclora/result_0.png" alt="result_0">
+                <img src="supplementary/comparisons/dance_front/iclora/result_1.png" alt="result_1">
+                <img src="supplementary/comparisons/dance_front/iclora/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/dance_front/iclora/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/dance_front/iclora/result_4.png" alt="result_4">
+            </div>
+
+            <div class="row images-row" data-row="edicho_inpaint">
+                <div class="vertical-label">Edicho-Inpaint*</div>
+                <img src="supplementary/comparisons/dance_front/edicho_inpaint/result_0.png" alt="result_0">
+                <img src="supplementary/comparisons/dance_front/edicho_inpaint/result_1.png" alt="result_1">
+                <img src="supplementary/comparisons/dance_front/edicho_inpaint/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/dance_front/edicho_inpaint/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/dance_front/edicho_inpaint/result_4.png" alt="result_4">
+            </div>
+
+            <div class="row images-row" data-row="ours">
+                <div class="vertical-label">Ours</div>
+                <img src="supplementary/comparisons/dance_front/ours/result_0.png" alt="result_0">
+                <img src="supplementary/comparisons/dance_front/ours/result_1.png" alt="result_1">
+                <img src="supplementary/comparisons/dance_front/ours/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/dance_front/ours/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/dance_front/ours/result_4.png" alt="result_4">
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="comparisons_ext" class="section hero">
+    <!-- Title + description -->
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-full">
+                <h2 class="title is-3">Extended Comparisons</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        We provide additional comparisons to closed-source image generation and editing model Nano
+                        Banana <a href="#References">[6]</a>.
+                        The results were obtained though the API by sending a 2x3 image grid with a prompt:
+                        <i>"Change the &lt;object&gt; in all images into \(\mathcal{P}^{shared}\). Keep the &lt;object&gt;
+                            poses as in the original images. Make the backgrounds look like a \(\mathcal{P}^{theme}\)
+                            setting."</i>
+                    </p>
+
+                    <p>
+                        <strong>Nano Banana</strong> fails to preserve original layouts and tends to copy-paste
+                        duplicate elements across images: foreground objects (dog, cat), as well as backgrounds (dog,
+                        cat, shoes, vase).
+                        Moreover, it often fails to apply the requested edit altogether (dog, cat).
+                        In cases where results do differ across the set, they lack consistency (vase).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full-width image block -->
+    <div class="container is-fluid">
+
+        <!-- Block of dog2_winter -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/comparisons/dog2_winter/src/image_0.png" alt="image_0">
+                <img src="supplementary/comparisons/dog2_winter/src/image_1.png" alt="image_1">
+                <img src="supplementary/comparisons/dog2_winter/src/image_2.png" alt="image_2">
+                <img src="supplementary/comparisons/dog2_winter/src/image_3.png" alt="image_3">
+                <img src="supplementary/comparisons/dog2_winter/src/image_4.png" alt="image_4">
+                <img src="supplementary/comparisons/dog2_winter/src/image_5.png" alt="image_5">
+            </div>
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"A dog toy with two-colored yarn"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"winter"</i>
+                </h2>
+            </div>
+
+            <div class="row images-row">
+                <div class="vertical-label">Nano Banana</div>
+                <img src="supplementary/comparisons/dog2_winter/nano_banana/result_0.png" alt="result_0">
+                <img src="supplementary/comparisons/dog2_winter/nano_banana/result_1.png" alt="result_1">
+                <img src="supplementary/comparisons/dog2_winter/nano_banana/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/dog2_winter/nano_banana/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/dog2_winter/nano_banana/result_4.png" alt="result_4">
+                <img src="supplementary/comparisons/dog2_winter/nano_banana/result_5.png" alt="result_5">
+            </div>
+
+            <div class="row images-row">
+                <div class="vertical-label">Ours</div>
+                <img src="supplementary/comparisons/dog2_winter/ours/result_0.png" alt="result_0">
+                <img src="supplementary/comparisons/dog2_winter/ours/result_1.png" alt="result_1">
+                <img src="supplementary/comparisons/dog2_winter/ours/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/dog2_winter/ours/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/dog2_winter/ours/result_4.png" alt="result_4">
+                <img src="supplementary/comparisons/dog2_winter/ours/result_5.png" alt="result_5">
+            </div>
+
+
+        </div>
+
+        <!-- Block of pet_cat1_autumn -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/comparisons/pet_cat1_autumn/src/image_0.png" alt="image_0">
+                <img src="supplementary/comparisons/pet_cat1_autumn/src/image_1.png" alt="image_1">
+                <img src="supplementary/comparisons/pet_cat1_autumn/src/image_2.png" alt="image_2">
+                <img src="supplementary/comparisons/pet_cat1_autumn/src/image_3.png" alt="image_3">
+                <img src="supplementary/comparisons/pet_cat1_autumn/src/image_4.png" alt="image_4">
+            </div>
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"A marble cat statue"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"autumn"</i>
+                </h2>
+            </div>
+
+            <div class="row images-row">
+                <div class="vertical-label">Nano Banana</div>
+                <img src="supplementary/comparisons/pet_cat1_autumn/nano_banana/result_0.png" alt="result_0">
+                <img src="supplementary/comparisons/pet_cat1_autumn/nano_banana/result_1.png" alt="result_1">
+                <img src="supplementary/comparisons/pet_cat1_autumn/nano_banana/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/pet_cat1_autumn/nano_banana/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/pet_cat1_autumn/nano_banana/result_4.png" alt="result_4">
+            </div>
+
+            <div class="row images-row">
+                <div class="vertical-label">Ours</div>
+                <img src="supplementary/comparisons/pet_cat1_autumn/ours/result_0.png" alt="result_0">
+                <img src="supplementary/comparisons/pet_cat1_autumn/ours/result_1.png" alt="result_1">
+                <img src="supplementary/comparisons/pet_cat1_autumn/ours/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/pet_cat1_autumn/ours/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/pet_cat1_autumn/ours/result_4.png" alt="result_4">
+            </div>
+
+        </div>
+
+        <!-- Block of wearable_shoes1_crop_modern -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/src/image_0.png" alt="image_0">
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/src/image_1.png" alt="image_1">
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/src/image_2.png" alt="image_2">
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/src/image_3.png" alt="image_3">
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/src/image_4.png" alt="image_4">
+            </div>
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"A plush slipper "</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"modern"</i>
+                </h2>
+            </div>
+
+            <div class="row images-row">
+                <div class="vertical-label">Nano Banana</div>
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/nano_banana/result_0.png"
+                     alt="result_0">
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/nano_banana/result_1.png"
+                     alt="result_1">
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/nano_banana/result_2.png"
+                     alt="result_2">
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/nano_banana/result_3.png"
+                     alt="result_3">
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/nano_banana/result_4.png"
+                     alt="result_4">
+            </div>
+
+            <div class="row images-row">
+                <div class="vertical-label">Ours</div>
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/ours/result_0.png" alt="result_0">
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/ours/result_1.png" alt="result_1">
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/ours/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/ours/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/wearable_shoes1_crop_modern/ours/result_4.png" alt="result_4">
+            </div>
+
+        </div>
+
+        <!-- Block of vase_rural -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source Set</div>
+                <img src="supplementary/comparisons/vase_rural/src/image_0.png" alt="image_0">
+                <img src="supplementary/comparisons/vase_rural/src/image_1.png" alt="image_1">
+                <img src="supplementary/comparisons/vase_rural/src/image_2.png" alt="image_2">
+                <img src="supplementary/comparisons/vase_rural/src/image_3.png" alt="image_3">
+                <img src="supplementary/comparisons/vase_rural/src/image_4.png" alt="image_4">
+            </div>
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"A cute disney-styled vase"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"rural"</i>
+                </h2>
+            </div>
+
+            <div class="row images-row">
+                <div class="vertical-label">Nano Banana</div>
+                <img src="supplementary/comparisons/vase_rural/nano_banana/result_0.png" alt="result_0">
+                <img src="supplementary/comparisons/vase_rural/nano_banana/result_1.png" alt="result_1">
+                <img src="supplementary/comparisons/vase_rural/nano_banana/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/vase_rural/nano_banana/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/vase_rural/nano_banana/result_4.png" alt="result_4">
+            </div>
+
+            <div class="row images-row">
+                <div class="vertical-label">Ours</div>
+                <img src="supplementary/comparisons/vase_rural/ours/result_0.png" alt="result_0">
+                <img src="supplementary/comparisons/vase_rural/ours/result_1.png" alt="result_1">
+                <img src="supplementary/comparisons/vase_rural/ours/result_2.png" alt="result_2">
+                <img src="supplementary/comparisons/vase_rural/ours/result_3.png" alt="result_3">
+                <img src="supplementary/comparisons/vase_rural/ours/result_4.png" alt="result_4">
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="ablation" class="section hero is-light">
+    <!-- Title + description -->
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-full">
+                <h2 class="title is-3">Ablations</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        We provide the complete image sets used in <strong>Fig.</strong> 7, along with additional
+                        ablation comparisons. <br>
+                        <strong>W/o Pairwise Consistency Graph</strong>, correspondences alone cannot align appearances,
+                        leading to identity drift.<br>
+                        <strong> W/o MFF and w/o Feature Guidance</strong> (both disabled) corresponds
+                        to a configuration that doesn't use source 2D matches. <br>
+                        <strong>W/o Multiview Feature Fusion</strong>, latent versions aggregated across edges diverge
+                        more easily, reducing consistency.<br>
+                        <strong>Omitting Feature Guidance</strong> at each step leads to misaligned fine-grained
+                        details.<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full-width image block -->
+    <div class="container is-fluid">
+
+        <!-- Block of backpack_winter -->
+        <hr class="image-divider">
+        <div class="image-block">
+
+            <div class="row images-row">
+                <div class="vertical-label">Source <br>Set</div>
+                <img src="supplementary/ablation/backpack_dog_autumn/src/image_0.png" alt="image_0">
+                <img src="supplementary/ablation/backpack_dog_autumn/src/image_1.png" alt="image_1">
+                <img src="supplementary/ablation/backpack_dog_autumn/src/image_2.png" alt="image_2">
+                <img src="supplementary/ablation/backpack_dog_autumn/src/image_3.png" alt="image_3">
+                <img src="supplementary/ablation/backpack_dog_autumn/src/image_4.png" alt="image_4">
+            </div>
+
+            <div class="row prompt-row">
+                <h2>
+                    \(\mathcal{P}^{shared}\): <i>"An orange dog-styled backpack"</i>
+                    <span class="tab-spacer"></span>
+                    \(\mathcal{P}^{theme}\): <i>"autumn"</i>
+                </h2>
+            </div>
+
+            <div class="row images-row">
+                <div class="vertical-label">w/o Pairwise Graph</div>
+                <img src="supplementary/ablation/backpack_dog_autumn/wo-graph/result_0.png" alt="result_0">
+                <img src="supplementary/ablation/backpack_dog_autumn/wo-graph/result_1.png" alt="result_1">
+                <img src="supplementary/ablation/backpack_dog_autumn/wo-graph/result_2.png" alt="result_2">
+                <img src="supplementary/ablation/backpack_dog_autumn/wo-graph/result_3.png" alt="result_3">
+                <img src="supplementary/ablation/backpack_dog_autumn/wo-graph/result_4.png" alt="result_4">
+            </div>
+
+            <div class="row images-row">
+                <div class="vertical-label">w/o MFF & w/o Guidance</div>
+                <img src="supplementary/ablation/backpack_dog_autumn/wo-guide-wo-mff/result_0.png" alt="result_0">
+                <img src="supplementary/ablation/backpack_dog_autumn/wo-guide-wo-mff/result_1.png" alt="result_1">
+                <img src="supplementary/ablation/backpack_dog_autumn/wo-guide-wo-mff/result_2.png" alt="result_2">
+                <img src="supplementary/ablation/backpack_dog_autumn/wo-guide-wo-mff/result_3.png" alt="result_3">
+                <img src="supplementary/ablation/backpack_dog_autumn/wo-guide-wo-mff/result_4.png" alt="result_4">
+            </div>
+
+            <div class="row images-row">
+                <div class="vertical-label">w/o Multiview Feature Fusion</div>
+                <img src="supplementary/ablation/backpack_dog_autumn/wo-mff/result_0.png" alt="result_0">
+                <img src="supplementary/ablation/backpack_dog_autumn/wo-mff/result_1.png" alt="result_1">
+                <img src="supplementary/ablation/backpack_dog_autumn/wo-mff/result_2.png" alt="result_2">
+                <img src="supplementary/ablation/backpack_dog_autumn/wo-mff/result_3.png" alt="result_3">
+                <img src="supplementary/ablation/backpack_dog_autumn/wo-mff/result_4.png" alt="result_4">
+            </div>
+
+            <div class="row images-row">
+                <div class="vertical-label">w/o Feature Guidance</div>
+                <img src="supplementary/ablation/backpack_dog_autumn/wo-guide/result_0.png" alt="result_0">
+                <img src="supplementary/ablation/backpack_dog_autumn/wo-guide/result_1.png" alt="result_1">
+                <img src="supplementary/ablation/backpack_dog_autumn/wo-guide/result_2.png" alt="result_2">
+                <img src="supplementary/ablation/backpack_dog_autumn/wo-guide/result_3.png" alt="result_3">
+                <img src="supplementary/ablation/backpack_dog_autumn/wo-guide/result_4.png" alt="result_4">
+            </div>
+
+            <div class="row images-row">
+                <div class="vertical-label">Full Method (Ours)</div>
+                <img src="supplementary/ablation/backpack_dog_autumn/ours/result_0.png" alt="result_0">
+                <img src="supplementary/ablation/backpack_dog_autumn/ours/result_1.png" alt="result_1">
+                <img src="supplementary/ablation/backpack_dog_autumn/ours/result_2.png" alt="result_2">
+                <img src="supplementary/ablation/backpack_dog_autumn/ours/result_3.png" alt="result_3">
+                <img src="supplementary/ablation/backpack_dog_autumn/ours/result_4.png" alt="result_4">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="section" id="References">
+    <div class="container is-max-desktop content">
+        <h2 class="title">References</h2>
+        <pre><code>
+[1] Vladimir Kulikov, Matan Kleiner, Inbar Huberman-Spiegelglas, and Tomer Michaeli. Flowedit: Inversion-free text-based editing using pre-trained flow models. arXiv preprint arXiv:2412.08629, 2024. 8
+[2] Black-Forest. Flux: Diffusion models for layered image generation. https://github.com/black-forest-labs/flux, 2024. Accessed: 2024-09-24. 1, 3162
+[3] Black Forest Labs, Stephen Batifol, Andreas Blattmann, Frederic Boesel, Saksham Consul, Cyril Diagne, Tim Dockhorn, Jack English, Zion English, Patrick Esser, Sumith Kulal, Kyle Lacey, Yam Levi, Cheng Li, Dominik Lorenz, JonasMuller, Dustin Podell, Robin Rombach, Harry Saini, Axel Sauer, and Luke Smith. Flux.1 kontext: Flow matching for in-context image generation and editing in latent space, 2025. 1202
+[4] Lianghua Huang, Wei Wang, Zhi-Fan Wu, Yupeng Shi, Huanzhang Dou, Chen Liang, Yutong Feng, Yu Liu, and Jingren Zhou. In-context lora for diffusion transformers. 2024. 2, 6, 7
+[5] Qingyan Bai, Hao Ouyang, Yinghao Xu, Qiuyu Wang, Ceyuan Yang, Ka Leong Cheng, Yujun Shen, and Qifeng Chen. Edicho: Consistent image editing in the wild. In arXiv preprint arXiv:2412.21079, 2024. 2, 7
+[6] Google DeepMind. Gemini 2.5 flash image (“nano banana”) model/api, 2025. Accessible via Google Gemini API. 2, 7
+      </code></pre>
+    </div>
+</section>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+    <!-- Chevron Up Icon (SVG) -->
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M6 15l6-6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+</button>
+
+<script>
+    (function () {
+        const btn = document.getElementById('backToTop');
+        const showAt = parseInt(getComputedStyle(document.documentElement)
+            .getPropertyValue('--threshold')) || 480;
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Toggle visibility
+        const toggle = () => {
+            if (window.scrollY > showAt) {
+                btn.classList.add('is-visible');
+            } else {
+                btn.classList.remove('is-visible');
+            }
+        };
+
+        // Smooth scroll without conflict
+        btn.addEventListener('click', () => {
+            // Temporarily disable global smooth scroll
+            const html = document.documentElement;
+            const prev = html.style.scrollBehavior;
+            html.style.scrollBehavior = 'auto';
+
+            window.scrollTo({top: 0, behavior: prefersReduced ? 'auto' : 'smooth'});
+
+            // Restore after the scroll animation ends (~500ms is safe)
+            setTimeout(() => {
+                html.style.scrollBehavior = prev;
+            }, 500);
+        });
+
+        toggle();
+        window.addEventListener('scroll', toggle, {passive: true});
+    })();
+</script>
+
+<script>
+    (function () {
+
+        const apply = (checkbox) => {
+            const key = checkbox.dataset.row;
+            if (!key) return;
+            document.querySelectorAll(`.images-row[data-row="${key}"]`).forEach(el => {
+                el.classList.toggle('is-hidden', !checkbox.checked);
+            });
+        };
+
+        document.querySelectorAll('input[type="checkbox"][data-row]').forEach(cb => {
+            cb.checked = true; // Always default ON
+            apply(cb);
+            cb.addEventListener('change', () => apply(cb));
+        });
+
+    })();
+</script>
+
+</body>
+</html>

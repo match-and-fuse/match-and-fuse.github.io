@@ -1,5 +1,5 @@
 body {
-  font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 
@@ -14,17 +14,21 @@ body {
 }
 
 .dnerf {
-  font-variant: small-caps;
+    font-variant: small-caps;
 }
 
 
 .teaser .hero-body {
-  padding-top: 0;
-  padding-bottom: 3rem;
+    padding-top: 0;
+    padding-bottom: 3rem;
+}
+
+.hero.hero-wide .container.is-max-desktop {
+    max-width: 1200px; /* increase width from Bulma’s ~960px */
 }
 
 .teaser {
-  font-family: 'Google Sans', sans-serif;
+    font-family: 'Google Sans', sans-serif;
 }
 
 
@@ -32,16 +36,16 @@ body {
 }
 
 .publication-banner {
-  max-height: parent;
+    max-height: parent;
 
 }
 
 .publication-banner video {
-  position: relative;
-  left: auto;
-  top: auto;
-  transform: none;
-  object-fit: fit;
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    object-fit: fit;
 }
 
 .publication-header .hero-body {
@@ -71,7 +75,7 @@ body {
 }
 
 .publication-authors a {
-   color: hsl(204, 86%, 53%) !important;
+    color: hsl(204, 86%, 53%) !important;
 }
 
 .publication-authors a:hover {
@@ -79,14 +83,14 @@ body {
 }
 
 .author-block {
-  display: inline-block;
+    display: inline-block;
 }
 
 .publication-banner img {
 }
 
 .publication-authors {
-  /*color: #4286f4;*/
+    /*color: #4286f4;*/
 }
 
 .publication-video {
@@ -111,27 +115,458 @@ body {
 }
 
 .results-carousel {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .results-carousel .item {
-  margin: 5px;
-  overflow: hidden;
-  padding: 20px;
-  font-size: 0;
+    margin: 5px;
+    overflow: hidden;
+    padding: 20px;
+    font-size: 0;
 }
 
 .results-carousel video {
-  margin: 0;
+    margin: 0;
 }
 
 .slider-pagination .slider-page {
-  background: #000000;
+    background: #000000;
 }
 
-.eql-cntrb { 
-  font-size: smaller;
+.eql-cntrb {
+    font-size: smaller;
+}
+
+.image-block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* spacing between rows */
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap; /* allows more images to flow into the row */
+    justify-content: center; /* centers the row contents */
+    gap: 15px; /* 15px spacing between items in the row */
+}
+
+.images-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: nowrap; /* stay on one line */
+    transform-origin: top center;
+    will-change: transform;
+}
+
+.images-row img {
+    height: 170px; /* desired row height */
+    width: auto; /* keep aspect ratio */
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    box-sizing: border-box;
+    flex: 0 0 auto; /* prevent stretching/shrinking */
+}
+
+.images-row-by-width {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: nowrap; /* one line */
+    transform-origin: top center;
+    will-change: transform;
+}
+
+.images-row-by-width img {
+    width: 170px; /* fixed image width */
+    height: auto; /* keep aspect ratio */
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    box-sizing: border-box;
+    flex: 0 0 auto;
+}
+
+.vertical-label {
+    writing-mode: vertical-rl; /* vertical text, top-to-bottom */
+    transform: rotate(180deg); /* make it readable top-down */
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 0px; /* spacing between label and first image */
+}
+
+.prompt-row {
+    --prompt-base: 1.3rem;
+    --prompt-scale: 1;
+    font-size: calc(var(--prompt-base) * var(--prompt-scale));
+    align-items: center;
+    /*align-items: center;*/
+    /*font-size: 1.3rem;*/
+    flex-wrap: wrap;
+    transform-origin: top center;
+    transition: transform 0.2s ease-out;
+    justify-content: center;
+}
+
+/* Default: no extra margins */
+.prompt-row {
+    position: relative;
+    height: auto !important;
+    transform: none !important;
+    isolation: isolate;
+}
+
+.prompt-row .tab-spacer {
+    width: 60px; /* adjust if you want a wider/narrower \tab */
+    display: inline-block;
+}
+
+.prompt-inner {
+    display: inline-block;
+    transform-origin: top center;
+}
+
+.image-divider {
+    border: none;
+    border-top: 1px solid #ddd; /* line color and thickness */
+    margin: 1.5rem 0; /* spacing above/below */
+    width: 80%; /* adjust width as desired */
+    margin-left: auto;
+    margin-right: auto; /* center the line */
+}
+
+/* Table of contents styling */
+.toc {
+    display: flex;
+    justify-content: center; /* horizontally center links */
+    flex-wrap: wrap; /* wrap on small screens */
+    gap: 0.8rem 2rem; /* vertical/horizontal spacing */
+    margin: 0 auto 1rem auto;
+}
+
+.toc a {
+    text-decoration: none;
+    color: #363636; /* Bulma default text color */
+    font-weight: 500;
+    font-size: 1.05rem;
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.toc a:hover {
+    color: #3273dc; /* Bulma primary color */
+    border-bottom-color: #3273dc;
+}
+
+.toc-divider {
+    border: none;
+    border-top: 1px solid #ddd;
+    width: 100%; /* nicely centered shorter line */
+    margin: 0 auto;
+}
+
+:root {
+    --btn-size: 72px;
+    --btn-bg: rgb(255, 255, 255);
+    --btn-fg: #111;
+    --btn-border: rgba(0, 0, 0, 0.08);
+    --btn-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --btn-radius: 14px;
+    --btn-blur: 8px;
+    --gap: clamp(12px, 2vw, 20px);
+    --threshold: 480px; /* when to show the button */
+}
+
+.content a {
+    color: #3273dc; /* Bulma’s default link blue */
+    text-decoration: underline;
+}
+
+/* Back-to-top button */
+.back-to-top {
+    position: fixed;
+    right: max(var(--gap), env(safe-area-inset-right));
+    bottom: calc(max(var(--gap), env(safe-area-inset-bottom)) + 0px);
+    width: var(--btn-size);
+    height: var(--btn-size);
+    display: grid;
+    place-items: center;
+    background: var(--btn-bg);
+    color: var(--btn-fg);
+    border: 1px solid var(--btn-border);
+    border-radius: var(--btn-radius);
+    box-shadow: var(--btn-shadow);
+    -webkit-backdrop-filter: blur(var(--btn-blur));
+    backdrop-filter: blur(var(--btn-blur));
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(8px);
+    pointer-events: none;
+    transition: opacity 200ms ease,
+    transform 200ms ease,
+    box-shadow 150ms ease,
+    background-color 150ms ease;
+    z-index: 999;
+}
+
+.back-to-top svg {
+    width: 22px;
+    height: 22px;
+}
+
+/* Visible state toggled by JS */
+.back-to-top.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Hover / active / focus styles */
+.back-to-top:hover {
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+}
+
+.back-to-top:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.back-to-top:focus-visible {
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(17, 117, 255, 0.15),
+    0 10px 28px rgba(0, 0, 0, 0.16);
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 
+/* Toggles for comparisons */
+:root {
+    --rail: #eef2f6; /* soft pale gray-blue rail */
+    --rail-dark: #d5dbe1; /* slightly darker for contrast */
+    --knob: #ffffff; /* neutral knob */
+    --on: #8ec9f4; /* gentle light blue when on */
+    --off: #adb5bd; /* medium gray for off state */
+    --border: rgba(0, 0, 0, 0.08);
+}
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        --rail: #2b2f36; /* muted dark rail */
+        --rail-dark: #3a3f46; /* slight contrast */
+        --knob: #d8dee4; /* soft gray knob */
+        --on: #7cb8e8; /* calm blue accent in dark mode */
+        --off: #8a8f99; /* balanced neutral off */
+        --border: rgba(255, 255, 255, 0.1);
+    }
+
+    body {
+        color: #e5e7eb;
+        background: #101418;
+    }
+}
+
+.switch input:not(:checked) + .track {
+    background: var(--rail-dark, #dfe4ea); /* softer gray background */
+    opacity: 0.8; /* slightly translucent for depth */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    margin: 0;
+    background: #fff;
+    color: #111827;
+}
+
+/* --- Toggle bar --- */
+.toggle-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    align-items: center;
+    padding: 12px 14px;
+    margin-bottom: 18px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+}
+
+.toggle-bar h3 {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    margin: 0 8px 0 0;
+    color: #374151;
+}
+
+.toggle-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+    align-items: center;
+}
+
+/* Switch component */
+.switch {
+    --h: 24px;
+    --w: 44px;
+    --p: 3px; /* knob padding */
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.switch input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.track {
+    width: var(--w);
+    height: var(--h);
+    border-radius: calc(var(--h) / 2);
+    background: var(--rail);
+    position: relative;
+    transition: background .2s ease, box-shadow .2s ease;
+    box-shadow: inset 0 0 0 1px var(--border);
+}
+
+.knob {
+    position: absolute;
+    top: var(--p);
+    left: var(--p);
+    width: calc(var(--h) - var(--p) * 2);
+    height: calc(var(--h) - var(--p) * 2);
+    background: var(--knob);
+    border-radius: 9999px;
+    transition: left .2s ease, transform .2s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .12), 0 2px 8px rgba(0, 0, 0, .08);
+}
+
+.switch input:checked + .track {
+    background: var(--on);
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+}
+
+.switch input:checked + .track .knob {
+    left: calc(var(--w) - var(--h) + var(--p));
+}
+
+.switch:has(input:focus-visible) .track {
+    outline: 2px solid #93c5fd;
+    outline-offset: 2px;
+}
+
+.switch .label {
+    opacity: .9;
+}
+
+/* Compact “All on/off” pill */
+.all-toggle {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    padding: 6px 10px;
+    border: 1px solid var(--border);
+    border-radius: 9999px;
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.btn {
+    appearance: none;
+    border: 1px solid var(--border);
+    background: #fff;
+    color: #111827;
+    padding: 6px 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    filter: brightness(0.98);
+}
+
+/* Hide helper */
+.is-hidden {
+    display: none !important;
+}
+
+/* minimal / one-row tweaks */
+.toggle-bar {
+    position: static;
+    top: auto;
+    z-index: auto;
+    background: transparent;
+    backdrop-filter: none;
+    box-shadow: none;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+.toggle-group {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 12px;
+}
+
+.all-toggle {
+    display: none !important;
+}
+
+.view-all-wrapper {
+  text-align: center;       /* or right-aligned: text-align: right; */
+  margin-top: 1.25rem;      /* space beneath the carousel */
+}
+
+.view-all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-decoration: none;
+
+  /* Default color outside hero */
+  transition: color .2s ease, transform .2s ease;
+}
+
+.view-all-link:hover {
+  transform: translateX(2px);
+}
+
+.view-all-link:active {
+  transform: translateX(1px) scale(0.98);
+}
+
+/* Override inside any Bulma hero */
+.hero .view-all-link {
+  color: #39393a; /* forced gray */
+}
+
+.hero .view-all-link:hover {
+  color: #39393a;
+  transform: translateX(2px); /* keep subtle motion */
+}
