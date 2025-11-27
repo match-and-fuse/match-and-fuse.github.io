@@ -194,6 +194,7 @@ body {
     font-size: 20px;
     text-align: center;
     margin-right: 0px; /* spacing between label and first image */
+    white-space: nowrap; /* prevent line breaks */
 }
 
 .prompt-row {
