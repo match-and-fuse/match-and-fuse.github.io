@@ -7,7 +7,7 @@
     <!-- Primary Meta Tags -->
     <meta name="title" content="Match-and-Fuse: Consistent Generation from Unstructured Image Sets">
     <meta name="description"
-          content="We present a zero-short, training-free method for consistent controlled generation of unstructured image sets - collections that share a common visual element, yet differ in viewpoint, time of capture, and surrounding content. Unlike existing methods that operate on individual images or densely sampled videos, our framework performs set-to-set generation. Our key idea is to model the task as a graph, where each node corresponds to an image and each edge triggers a joint generation of image pairs. This formulation consolidates all pairwise generations into a unified framework, enforcing their local consistency while ensuring global coherence across the entire set. This is achieved by fusing internal features across image pairs, guided by dense input correspondences, without requiring masks or manual supervision. It also allows us to leverage an emergent prior in text‑to‑image models that encourages coherent generation when multiple views share a single canvas. Match-and-Fuse achieves state-of-the-art consistency and visual quality, and unlocks new capabilities for content creation from image collections.">
+          content="We present a zero-shot, training-free method for consistent controlled generation of unstructured image sets - collections that share a common visual element, yet differ in viewpoint, time of capture, and surrounding content. Unlike existing methods that operate on individual images or densely sampled videos, our framework performs set-to-set generation. Our key idea is to model the task as a graph, where each node corresponds to an image and each edge triggers a joint generation of image pairs. This formulation consolidates all pairwise generations into a unified framework, enforcing their local consistency while ensuring global coherence across the entire set. This is achieved by fusing internal features across image pairs, guided by dense input correspondences, without requiring masks or manual supervision. It also allows us to leverage an emergent prior in text‑to‑image models that encourages coherent generation when multiple views share a single canvas. Match-and-Fuse achieves state-of-the-art consistency and visual quality, and unlocks new capabilities for content creation from image collections.">
     <meta name="keywords"
           content="Diffusion, Controlled Image Generation, Image Sets, Consistency, Training-Free, Deep Learning, Computer Vision, AI">
     <meta name="author" content="Kate Feingold, Omri Kaduri, Tali Dekel">
@@ -19,7 +19,7 @@
     <meta property="og:site_name" content="Weizmann Institute of Science">
     <meta property="og:title" content="Match-and-Fuse: Consistent Generation from Unstructured Image Sets">
     <meta property="og:description"
-          content="We present a zero-short, training-free method for consistent controlled generation of unstructured image sets - collections that share a common visual element, yet differ in viewpoint, time of capture, and surrounding content. Unlike existing methods that operate on individual images or densely sampled videos, our framework performs set-to-set generation. Our key idea is to model the task as a graph, where each node corresponds to an image and each edge triggers a joint generation of image pairs. This formulation consolidates all pairwise generations into a unified framework, enforcing their local consistency while ensuring global coherence across the entire set. This is achieved by fusing internal features across image pairs, guided by dense input correspondences, without requiring masks or manual supervision. It also allows us to leverage an emergent prior in text‑to‑image models that encourages coherent generation when multiple views share a single canvas. Match-and-Fuse achieves state-of-the-art consistency and visual quality, and unlocks new capabilities for content creation from image collections.">
+          content="We present a zero-shot, training-free method for consistent controlled generation of unstructured image sets - collections that share a common visual element, yet differ in viewpoint, time of capture, and surrounding content. Unlike existing methods that operate on individual images or densely sampled videos, our framework performs set-to-set generation. Our key idea is to model the task as a graph, where each node corresponds to an image and each edge triggers a joint generation of image pairs. This formulation consolidates all pairwise generations into a unified framework, enforcing their local consistency while ensuring global coherence across the entire set. This is achieved by fusing internal features across image pairs, guided by dense input correspondences, without requiring masks or manual supervision. It also allows us to leverage an emergent prior in text‑to‑image models that encourages coherent generation when multiple views share a single canvas. Match-and-Fuse achieves state-of-the-art consistency and visual quality, and unlocks new capabilities for content creation from image collections.">
     <meta property="og:url" content="https://match-and-fuse.github.io/">
     <meta property="og:image" content="https://match-and-fuse.github.io/static/images/teaser_banner.png">
     <meta property="og:image:width" content="1200">
@@ -36,7 +36,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Match-and-Fuse: Consistent Generation from Unstructured Image Sets">
     <meta name="twitter:description"
-          content="We present a zero-short, training-free method for consistent controlled generation of unstructured image sets - collections that share a common visual element, yet differ in viewpoint, time of capture, and surrounding content. Unlike existing methods that operate on individual images or densely sampled videos, our framework performs set-to-set generation. Our key idea is to model the task as a graph, where each node corresponds to an image and each edge triggers a joint generation of image pairs. This formulation consolidates all pairwise generations into a unified framework, enforcing their local consistency while ensuring global coherence across the entire set. This is achieved by fusing internal features across image pairs, guided by dense input correspondences, without requiring masks or manual supervision. It also allows us to leverage an emergent prior in text‑to‑image models that encourages coherent generation when multiple views share a single canvas. Match-and-Fuse achieves state-of-the-art consistency and visual quality, and unlocks new capabilities for content creation from image collections.">
+          content="We present a zero-shot, training-free method for consistent controlled generation of unstructured image sets - collections that share a common visual element, yet differ in viewpoint, time of capture, and surrounding content. Unlike existing methods that operate on individual images or densely sampled videos, our framework performs set-to-set generation. Our key idea is to model the task as a graph, where each node corresponds to an image and each edge triggers a joint generation of image pairs. This formulation consolidates all pairwise generations into a unified framework, enforcing their local consistency while ensuring global coherence across the entire set. This is achieved by fusing internal features across image pairs, guided by dense input correspondences, without requiring masks or manual supervision. It also allows us to leverage an emergent prior in text‑to‑image models that encourages coherent generation when multiple views share a single canvas. Match-and-Fuse achieves state-of-the-art consistency and visual quality, and unlocks new capabilities for content creation from image collections.">
     <meta name="twitter:image" content="https://match-and-fuse.github.io/static/images/teaser_banner.png">
     <meta name="twitter:image:alt"
           content="Match-and-Fuse: Consistent Generation from Unstructured Image Sets - Research Preview">
@@ -147,7 +147,7 @@
 <section class="hero teaser">
     <div class="container is-max-desktop">
         <div class="hero-body">
-            <video poster="" id="tree" autoplay muted loop height="100%">
+            <video poster="" id="tree" autoplay muted loop playsinline height="100%">
                 <!-- Your video here -->
                 <source src="static/videos/teaser_video.mp4"
                         type="video/mp4">
@@ -172,7 +172,7 @@
                 <h2 class="title is-3">Abstract</h2>
                 <div class="content has-text-justified">
                     <p>
-                        We present <strong>Match-and-Fuse</strong> &ndash; a zero-short, training-free method for
+                        We present <strong>Match-and-Fuse</strong> &ndash; a zero-shot, training-free method for
                         consistent controlled generation of
                         unstructured image sets &ndash; collections that share a common visual element, yet differ in
                         viewpoint,
@@ -763,7 +763,7 @@
 
                     <div class="content">
                         <p>
-                            Match-and-Fused enables consistent, localized editing without \(\mathcal{P}^{theme}\),
+                            Match-and-Fuse enables consistent, localized editing without \(\mathcal{P}^{theme}\),
                             achieved
                             through integration with FlowEdit <a href="#References">[3]</a>.
                         </p>
