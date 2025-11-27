@@ -446,6 +446,7 @@ body {
     border-radius: calc(var(--h) / 2);
     background: var(--rail);
     position: relative;
+    pointer-events: none;
     transition: background .2s ease, box-shadow .2s ease;
     box-shadow: inset 0 0 0 1px var(--border);
 }
