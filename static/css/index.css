@@ -162,7 +162,7 @@ body {
 }
 
 .images-row img {
-    height: 170px; /* desired row height */
+    height: 150px; /* desired row height */
     width: auto; /* keep aspect ratio */
     border: 1px solid rgba(0, 0, 0, 0.6);
     box-sizing: border-box;
@@ -180,7 +180,7 @@ body {
 }
 
 .images-row-by-width img {
-    width: 170px; /* fixed image width */
+    width: 150px; /* fixed image width */
     height: auto; /* keep aspect ratio */
     border: 1px solid rgba(0, 0, 0, 0.6);
     box-sizing: border-box;

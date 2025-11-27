@@ -1381,60 +1381,8 @@
     })();
 </script>
 
-<!--<script>-->
-<!--    (function () {-->
 
-<!--        const apply = (checkbox) => {-->
-<!--            const key = checkbox.dataset.row;-->
-<!--            if (!key) return;-->
-<!--            document.querySelectorAll(`.images-row[data-row="${key}"]`).forEach(el => {-->
-<!--                el.classList.toggle('is-hidden', !checkbox.checked);-->
-<!--            });-->
-<!--        };-->
-
-<!--        document.querySelectorAll('input[type="checkbox"][data-row]').forEach(cb => {-->
-<!--            // cb.checked = true; // Always default ON-->
-<!--            apply(cb);-->
-<!--            cb.addEventListener('change', () => apply(cb));-->
-<!--        });-->
-
-<!--    })();-->
-<!--</script>-->
-
-<!--Not bad-->
-<!--<script>-->
-<!--    (function () {-->
-<!--        const apply = (checkbox) => {-->
-<!--            const key = checkbox.dataset.row;-->
-<!--            if (!key) return;-->
-<!--            document.querySelectorAll(`.images-row[data-row="${key}"]`).forEach(el => {-->
-<!--                el.classList.toggle('is-hidden', !checkbox.checked);-->
-<!--            });-->
-<!--        };-->
-
-<!--        document.querySelectorAll('input[type="checkbox"][data-row]').forEach(cb => {-->
-<!--            // DO NOT call apply(cb) here: initial state comes from HTML-->
-<!--            cb.addEventListener('change', () => apply(cb));-->
-<!--        });-->
-<!--    })();-->
-<!--</script>-->
-
-<!--<script>-->
-<!--    (function () {-->
-<!--        const apply = (checkbox) => {-->
-<!--            const key = checkbox.dataset.row;-->
-<!--            if (!key) return;-->
-<!--            document.querySelectorAll(`.images-row[data-row="${key}"]`).forEach(el => {-->
-<!--                el.style.display = checkbox.checked ? '' : 'none';-->
-<!--            });-->
-<!--        };-->
-
-<!--        document.querySelectorAll('input[type="checkbox"][data-row]').forEach(cb => {-->
-<!--            // Initial state comes from HTML (style/display)-->
-<!--            cb.addEventListener('change', () => apply(cb));-->
-<!--        });-->
-<!--    })();-->
-<!--</script>-->
+</body>
 
 <script>
     (function () {
@@ -1463,5 +1411,4 @@
     })();
 </script>
 
-</body>
 </html>

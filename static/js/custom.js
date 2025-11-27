@@ -124,8 +124,8 @@
 // })();
 
 (function () {
-    const BASE_HEIGHT = 170; // for .images-row (fixed height)
-    const BASE_WIDTH = 170; // for .images-row-by-width (fixed width)
+    const BASE_HEIGHT = 150; // for .images-row (fixed height)
+    const BASE_WIDTH = 150; // for .images-row-by-width (fixed width)
 
     // Existing: row scaled by total width computed at BASE_HEIGHT
     function scaleRowByHeight(row) {
