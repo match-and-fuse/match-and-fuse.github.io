@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
 
     <!-- Primary Meta Tags -->
     <meta name="title" content="Match-and-Fuse: Consistent Generation from Unstructured Image Sets">
@@ -1389,8 +1389,25 @@
         const apply = (checkbox) => {
             const key = checkbox.dataset.row;
             if (!key) return;
-            document.querySelectorAll(`.images-row[data-row="${key}"]`).forEach(el => {
-                el.classList.toggle('is-hidden', !checkbox.checked);
+
+            document.querySelectorAll(`.row[data-row="${key}"]`).forEach(row => {
+                const show = checkbox.checked;
+                row.classList.toggle('is-hidden', !show);
+
+                if (show) {
+                    // After making it visible, rescale this specific row
+                    requestAnimationFrame(() => {
+                        if (row.classList.contains('images-row-by-width') && window.scaleRowByWidth) {
+                            window.scaleRowByWidth(row);
+                        } else if (row.classList.contains('images-row') && window.scaleRowByHeight) {
+                            window.scaleRowByHeight(row);
+                        }
+                    });
+                } else {
+                    // Optionally clear inline styles when hiding
+                    row.style.transform = '';
+                    row.style.height = '';
+                }
             });
         };
 
@@ -1398,13 +1415,10 @@
             document.querySelectorAll('input[type="checkbox"][data-row]')
         );
 
-        // Normal behavior: respond to user toggles
         checkboxes.forEach(cb => {
             cb.addEventListener('change', () => apply(cb));
         });
 
-        // NEW: after everything (including carousels) has initialized,
-        // sync the rows to the checkbox states
         window.addEventListener('load', () => {
             checkboxes.forEach(cb => apply(cb));
         });
